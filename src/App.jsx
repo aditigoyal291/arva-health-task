@@ -1,13 +1,31 @@
-import { Button } from "./components/ui/button";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Notfound from "./pages/not-found";
 
 function App() {
   return (
-    <>
-      <div className="">
-        <h1 className="p-4 flex justify-center bg-yellow-300">pillow</h1>
-        <Button>Submit</Button>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Notfound />} /> //404 catch-all route
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
