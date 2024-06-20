@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "node index.js",
-    "dev-server": "nodemon index.js"    
+    "dev-server": "nodemon index.js",
+    "format": "prettier --write ."
   },
   "author": "Aditi Goyal",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "prettier": "3.3.2"
   }
 }
