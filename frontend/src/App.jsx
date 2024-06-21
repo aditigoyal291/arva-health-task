@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Notfound from "./pages/not-found";
+import Map from "./pages/map";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Notfound />} /> //404 catch-all route
+          <Route path="/map"element={<Map />} />
         </Routes>
       </div>
     </Router>
