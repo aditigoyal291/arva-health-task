@@ -1,17 +1,18 @@
-// app.js
-
 import dotenv from "dotenv";
-// require("dotenv").config();
-dotenv.config();
 import express from "express";
-const app = express();
 
-const port = process.env.PORT || 8080;
+dotenv.config({
+  path: ".env.local",
+});
+
+const app = express() || 8080;
+
+const port = process.env.PORT;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Server listening at http://localhost:${port}`);
 });
