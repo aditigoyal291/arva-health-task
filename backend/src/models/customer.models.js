@@ -13,15 +13,15 @@ const customerSchema = new mongoose.Schema(
     },
     location: {
       type: String,
-      required: true,
+      // required: true,
       trim: true,
       latitude: {
         type: Number,
-        required: true,
+        // required: true,
       },
       longitude: {
         type: Number,
-        required: true,
+        // required: true,
       },
     },
     password: {

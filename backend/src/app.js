@@ -11,22 +11,23 @@ app.use(
     credentials: true,
   })
 );
-
-app.use(morgan("tiny"));
+morgan.token("host", function (req, res) {
+  return req.hostname;
+});
 app.use(
-  express.json({
-    limit: "16kb",
-  })
+  morgan(":method :host :status :res[content-length] - :response-time ms")
 );
+// app.use(morgan("tiny"));
 
+app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-
-app.use(express.static("public")); //for assets
-
+app.use(express.static("public"));
 app.use(cookieParser());
 
+// router imports
 import userRouter from "./routes/user.routes.js";
 
+// route declaration
 app.use("/api/v1/users", userRouter);
 
 export { app };
