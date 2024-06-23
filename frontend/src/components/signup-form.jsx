@@ -1,8 +1,3 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/OdTIbalBBC0
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import {
   Card,
   CardHeader,
@@ -18,15 +13,15 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function SignupForm() {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
   const handleSubmit = async (e) => {
-    e.preventDafault();
-    console.log(data.email, data.password);
-    // axios
-    //   .post("http://localhost:8000/api/v1/users/signup", data)
-    //   .then(() => console.log("success signup"))
-    //   .catch((err) => {
-    //     console.error(err);
-    // });
+    e.preventDefault();
+
     try {
       const response = await axios.post(
         "http://localhost:8000/api/v1/users/signup",
@@ -37,11 +32,7 @@ export default function SignupForm() {
       console.error(err);
     }
   };
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+
   function handleInput(e) {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
@@ -56,7 +47,6 @@ export default function SignupForm() {
           Fill out the form below to get started.
         </CardDescription>
       </CardHeader>
-      {/* <form method="POST" action={`http://localhost:8000/api/v1/users/signup`}> */}
       <form onSubmit={(e) => handleSubmit(e)}>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
