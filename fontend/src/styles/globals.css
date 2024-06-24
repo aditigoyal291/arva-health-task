@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 184.7 100% 95%; /* Lighten the base color */
-    --foreground: 184.7 100% 12.5%; /* Darken the base color */
+    /* --background: 184.7 100% 95%; Lighten the base color */
+    --background: 340 8% 92%;
+    --foreground: 184.7 100% 12.5%;  /*Darken the base color */
 
     --card: 184.7 100% 95%;
     --card-foreground: 184.7 100% 12.5%;
@@ -73,4 +76,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }

@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "sonner";
 
 export default function SignupForm() {
   const [data, setData] = useState({
@@ -18,18 +19,27 @@ export default function SignupForm() {
     email: "",
     password: "",
   });
+  const [response, setResponse] = useState({})
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     try {
-      const response = await axios.post(
+      const res = await axios.post(
         "http://localhost:8000/api/v1/users/signup",
         data
       );
-      console.log(response.data);
+      setResponse(res.data);
+      toast("Account created successfully!", {
+        description: "You can now login to your account."
+      })
+
     } catch (err) {
       console.error(err);
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -86,7 +96,7 @@ export default function SignupForm() {
           </Button>
         </CardFooter>
       </form>
-      {JSON.stringify(data)}
+      {process.env.NODE_ENV==="development" && JSON.stringify(data)}
     </Card>
   );
 }

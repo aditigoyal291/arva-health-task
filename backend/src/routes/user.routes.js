@@ -30,7 +30,7 @@ router.post("/signup", async (req, res) => {
       message: "User created successfully",
       data: customer,
       status:201,
-
+      success: true
     });
 });
 
