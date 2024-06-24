@@ -1,0 +1,62 @@
+[
+  {
+    "itemname": "Cappuccino",
+    "itemprice": 3.5,
+    "itembelongs to": "Brewed Awakenings",
+    "photo": "https://example.com/photos/cappuccino.jpg"
+  },
+  {
+    "itemname": "Espresso",
+    "itemprice": 2.75,
+    "itembelongs to": "Espresso Express",
+    "photo": "https://example.com/photos/espresso.jpg"
+  },
+  {
+    "itemname": "Latte",
+    "itemprice": 4.0,
+    "itembelongs to": "Latte Lounge",
+    "photo": "https://example.com/photos/latte.jpg"
+  },
+  {
+    "itemname": "Mocha",
+    "itemprice": 4.5,
+    "itembelongs to": "Mocha Moments",
+    "photo": "https://example.com/photos/mocha.jpg"
+  },
+  {
+    "itemname": "Americano",
+    "itemprice": 2.5,
+    "itembelongs to": "Cappuccino Corner",
+    "photo": "https://example.com/photos/americano.jpg"
+  },
+  {
+    "itemname": "Flat White",
+    "itemprice": 3.75,
+    "itembelongs to": "Brew Brothers",
+    "photo": "https://example.com/photos/flat_white.jpg"
+  },
+  {
+    "itemname": "Macchiato",
+    "itemprice": 3.25,
+    "itembelongs to": "Java Junction",
+    "photo": "https://example.com/photos/macchiato.jpg"
+  },
+  {
+    "itemname": "Chai Latte",
+    "itemprice": 4.0,
+    "itembelongs to": "Frothy Fix",
+    "photo": "https://example.com/photos/chai_latte.jpg"
+  },
+  {
+    "itemname": "Iced Coffee",
+    "itemprice": 3.0,
+    "itembelongs to": "Bean Scene",
+    "photo": "https://example.com/photos/iced_coffee.jpg"
+  },
+  {
+    "itemname": "Cold Brew",
+    "itemprice": 3.5,
+    "itembelongs to": "Grind House",
+    "photo": "https://example.com/photos/cold_brew.jpg"
+  }
+]
