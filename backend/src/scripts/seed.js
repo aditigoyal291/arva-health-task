@@ -36,11 +36,7 @@ const load = async () => {
   } else {
     try {
       await mongoose.connect(
-        "mongodb+srv://aditi-arva:adiigoyal2002123@cluster0.yeglndp.mongodb.net/arva-health-coffee-shop",
-        {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-        }
+        "mongodb+srv://aditi-arva:adiigoyal2002123@cluster0.yeglndp.mongodb.net/arva-health-coffee-shop"
       );
       await Customer.deleteMany();
       console.log("✓" + " [1/2] " + chalk.red("Deleted customer records"));

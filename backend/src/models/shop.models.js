@@ -12,6 +12,14 @@ const shopSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    thumbnail: {
+      type: String,
+      required: true,
+    },
+    coverImages: {
+      type: Array,
+      default: [],
+    },
     password: {
       type: String,
       required: true,

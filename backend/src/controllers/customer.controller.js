@@ -178,3 +178,74 @@ export const getCustomerProfile = async (req, res) => {
     );
   }
 };
+
+export const BookmarkShop = async (req, res) => {
+  const { shop_id, user_id } = req.body;
+
+  try {
+    const customer = await Customer.findById(user_id);
+
+    if (!customer) {
+      return res.status(404).json(
+        ApiResponse(
+          {
+            title: "Customer not found",
+            description: "The requested customer does not exist",
+          },
+          null,
+          404,
+          false
+        )
+      );
+    }
+
+    const isShopBookmarked = customer.bookmarks.includes(shop_id);
+
+    if (isShopBookmarked) {
+      customer.bookmarks = customer.bookmarks.filter((id) => id.toString() !== shop_id);
+      await customer.save();
+
+      return res.status(200).json(
+        ApiResponse(
+          {
+            title: "Shop removed from bookmarks",
+            description: "Shop removed from bookmarks successfully",
+          },
+          null,
+          200,
+          true
+        )
+      );
+    } else {
+      customer.bookmarks.push(shop_id);
+      await customer.save();
+
+      return res.status(200).json(
+        ApiResponse(
+          {
+            title: "Shop added to bookmarks",
+            description: "Shop added to bookmarks successfully",
+          },
+          null,
+          200,
+          true
+        )
+      );
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json(
+      ApiResponse(
+        {
+          title: "Internal server error",
+          description: "An error occurred while processing your request",
+        },
+        null,
+        500,
+        false
+      )
+    );
+  }
+};
+
+export const LikeFoodItem = async (req, res) => {};

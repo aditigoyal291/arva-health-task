@@ -3,12 +3,14 @@
     "shopname": "Brewed Awakenings",
     "email": "contact@brewedawakenings.com",
     "password": "AwakeAndBrewed123",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "phonenumber": 15551234567,
     "owner": "6679ad7301d4e19ea003a860"
   },
   {
     "shopname": "Espresso Express",
     "email": "info@espressoexpress.com",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "password": "Express1234",
     "phonenumber": 15552345678,
     "owner": "6679ad7301d4e19ea003a861"
@@ -16,6 +18,7 @@
   {
     "shopname": "Latte Lounge",
     "email": "hello@lattelounge.com",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "password": "LoungeLove56",
     "phonenumber": 15553456789,
     "owner": "6679ad7301d4e19ea003a862"
@@ -23,6 +26,7 @@
   {
     "shopname": "Mocha Moments",
     "email": "support@mochamoments.com",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "password": "MomentsMocha77",
     "phonenumber": 15554567890,
     "owner": "6679ad7301d4e19ea003a863"
@@ -31,6 +35,7 @@
     "shopname": "Cappuccino Corner",
     "email": "contact@cappuccinocorner.com",
     "password": "CornerCappuccino88",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "phonenumber": 15555678901,
     "owner": "6679ad7301d4e19ea003a864"
   },
@@ -38,6 +43,7 @@
     "shopname": "Brew Brothers",
     "email": "info@brewbrothers.com",
     "password": "BrothersBrew99",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "phonenumber": 15556789012,
     "owner": "6679ad7301d4e19ea003a865"
   },
@@ -45,6 +51,7 @@
     "shopname": "Java Junction",
     "email": "support@javajunction.com",
     "password": "JunctionJava66",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "phonenumber": 15557890123,
     "owner": "6679ad7301d4e19ea003a866"
   },
@@ -52,12 +59,14 @@
     "shopname": "Frothy Fix",
     "email": "hello@frothyfix.com",
     "password": "FixFrothy44",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "phonenumber": 15558901234,
     "owner": "6679ad7301d4e19ea003a867"
   },
   {
     "shopname": "Bean Scene",
     "email": "contact@beanscene.com",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "password": "SceneBean22",
     "phonenumber": 15559012345,
     "owner": "6679ad7301d4e19ea003a868"
@@ -65,6 +74,7 @@
   {
     "shopname": "Grind House",
     "email": "info@grindhouse.com",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "password": "HouseGrind11",
     "phonenumber": 15550123456,
     "owner": "6679ad7301d4e19ea003a869"

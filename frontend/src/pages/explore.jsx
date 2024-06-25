@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -9,10 +9,29 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { foodItems } from "@/data/data";
+import axios from "axios";
 
-const ExplorePage=()=> {
+const ExplorePage = () => {
   const [filter, setFilter] = useState("All");
+  const [foodItems, setFoodItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFoodItems = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/api/v1/fooditems/all`
+        );
+        setFoodItems(response.data.data);
+      } catch (error) {
+        console.log(error);
+        // err.response ? err.response.data.message : "Error fetching food items"
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchFoodItems();
+  }, []);
 
   const handleFilterChange = (type) => {
     setFilter(type);
@@ -144,7 +163,7 @@ const ExplorePage=()=> {
                 <div className="flex flex-col text-lg font-semibold">
                   <h1>{item.itemName}</h1>
                   <p className="text-sm">{item.description}</p>
-                  <p> ₹{item.itemPrice}</p>
+                  <p> ${item.itemPrice}</p>
                   <p>{item.itemType}</p>
                 </div>
               </div>
@@ -152,8 +171,9 @@ const ExplorePage=()=> {
           </div>
         </div>
       </div>
+      {JSON.stringify(filteredItems, null, 2)}
     </div>
   );
-}
+};
 
 export default ExplorePage;

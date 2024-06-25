@@ -2,20 +2,56 @@ import Blob from "@/components/blob";
 import HeroText from "@/components/hero-text";
 import Navbar from "@/components/navbar";
 import ShopCard from "@/components/shop-card";
+import ShopCardSkeleton from "@/components/skeleton/shop-card-skeleton";
+import { UserContext } from "@/context/auth-context";
 import { coffeeShop } from "@/data/data";
 import { cn } from "@/lib/utils";
-import React from "react";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
 
 const Home = () => {
+  const [shops, setShops] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { user, isLoading } = useContext(UserContext);
+
+  useEffect(() => {
+    const getShops = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get("http://localhost:8000/api/v1/shop/all");
+
+        setShops(res.data.data);
+        // setShops(data.data)
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getShops();
+  }, []);
   return (
     <div className={cn("flex flex-col gap-10 px-4 sm:px-6 md:px-4")}>
       <section className="min-h-screen">
         <HeroText />
         {/* <Blob /> */}
+
         <section className="mx-auto grid max-w-screen-xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {coffeeShop.map((shop) => (
-            <ShopCard key={shop._id} shop={shop} />
-          ))}
+          {loading
+            ? Array(12)
+                .fill(0)
+                .map((_, i) => <ShopCardSkeleton key={i} />)
+            : shops.map((shop) => {
+                return (
+                  <ShopCard
+                    key={shop._id}
+                    userLoading={isLoading}
+                    user={user}
+                    shop={shop}
+                  />
+                );
+              })}
         </section>
       </section>
     </div>

@@ -30,8 +30,14 @@ const customerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    likes: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "Fooditems",
+      default: [],
+    },
     bookmarks: {
-      type: Array,
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "Shop",
       default: [],
     },
   },

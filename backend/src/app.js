@@ -32,6 +32,6 @@ import productRouter from "./routes/product.routes.js";
 // route declaration
 app.use("/api/v1/users", customerRouter);
 app.use("/api/v1/shop", shopRouter);
-app.use("/api/v1/product", productRouter);
+app.use("/api/v1/fooditems", productRouter);
 
 export { app };

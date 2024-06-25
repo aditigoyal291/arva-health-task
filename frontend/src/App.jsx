@@ -16,8 +16,6 @@ import { Toaster } from "sonner";
 import Navbar from "./components/navbar";
 import ExploreShopPage from "./pages/explore-shop";
 import UserProvider from "./context/auth-context";
-import PrivateRoute from "./components/private-route";
-import LikesPage from "./pages/likes";
 
 function App() {
   return (
@@ -31,22 +29,7 @@ function App() {
           <Route path="/auth/login" element={<Login />} />
           <Route path="/explore/:shopid" element={<ExploreShopPage />} />
           <Route path="/explore" element={<ExplorePage />} />
-          <Route
-            path="/bookmarks"
-            element={
-              <PrivateRoute>
-                <BookmarkPage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/likes"
-            element={
-              <PrivateRoute>
-                <LikesPage />
-              </PrivateRoute>
-            }
-          />
+          <Route path="/bookmarks" element={<BookmarkPage />} />
           {/* <PrivateRoute element={<BookmarkPage />} /> */}
           <Route path="*" element={<Notfound />} />{" "}
         </Routes>

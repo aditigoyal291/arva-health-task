@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Avatar from "boring-avatars";
 import { Link } from "react-router-dom";
-import { getCustomerData } from "@/lib/utils";
 import { UserContext } from "@/context/auth-context";
 
 const Navbar = () => {
