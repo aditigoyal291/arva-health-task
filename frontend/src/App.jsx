@@ -29,7 +29,7 @@ function App() {
           <Route path="/auth/login" element={<Login />} />
           <Route path="/explore/:shopid" element={<ExploreShopPage />} />
           <Route path="/explore" element={<ExplorePage />} />
-          <Route path="/bookmark" element={<BookmarkPage />} />
+          <Route path="/bookmarks" element={<BookmarkPage />} />
           {/* <PrivateRoute element={<BookmarkPage />} /> */}
           <Route path="*" element={<Notfound />} />{" "}
         </Routes>
