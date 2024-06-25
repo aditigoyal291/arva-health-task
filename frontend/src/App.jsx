@@ -15,10 +15,11 @@ import BookmarkPage from "./pages/bookmark";
 import { Toaster } from "sonner";
 import Navbar from "./components/navbar";
 import ExploreShopPage from "./pages/explore-shop";
+import UserProvider from "./context/auth-context";
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -34,7 +35,7 @@ function App() {
         </Routes>
       </Router>
       <Toaster />
-    </>
+    </UserProvider>
   );
 }
 

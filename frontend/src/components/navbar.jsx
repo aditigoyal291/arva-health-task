@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Avatar from "boring-avatars";
 import { Link } from "react-router-dom";
 import { getCustomerData } from "@/lib/utils";
+import { UserContext } from "@/context/auth-context";
 
 const Navbar = () => {
-  const [customer, setCustomer] = useState({});
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    getCustomerData(token).then((data) => setCustomer(data || {})); // Update state with user data
-  }, []);
+  const { user, isLoading, updateUser } = useContext(UserContext);
 
   const logout = () => {
     localStorage.removeItem("token");
-    setCustomer({});
+    updateUser({});
     window.location.href = "/";
   };
 
   return (
-    <div className="bg-primary px-4 py-1 shadow-sm sm:px-6 md:px-0">
+    <div className="bg-primary px-4 py-1 shadow-sm sm:px-6 md:px-4">
       <nav
         className="mx-auto flex max-w-screen-xl items-center justify-between"
         aria-label="Global"
@@ -49,14 +45,15 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="flex items-center gap-x-2">
-          {customer.name ? ( // Check if customer object has a 'name' property
+          {isLoading && <p>Loading...</p>}
+          {user.name ? ( // Check if customer object has a 'name' property
             <>
               <button onClick={logout} className="w-20 text-center text-white">
                 logout
               </button>
               <Avatar
                 size={40}
-                name={customer.name || ""} // Use customer name for avatar
+                name={user.name || ""} // Use customer name for avatar
                 variant="beam"
                 colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
                 className="h-[6rem] w-[6rem] rounded-full"

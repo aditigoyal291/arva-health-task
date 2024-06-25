@@ -1,52 +1,39 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-import axios from "axios";
-import Cookies from "js-cookie";
+import { getCustomerData } from "@/lib/utils";
+import React, { createContext, useState, useEffect } from "react";
 
-const AuthContext = createContext();
+const UserContext = createContext({ user: {}, isLoading: false });
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+const UserProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const token = Cookies.get("token");
-        if (token) {
-          const response = await axios.get(
-            "http://localhost:5000/api/auth/me",
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-          setUser(response.data);
-        }
-      } catch (error) {
-        console.error("Error fetching user", error);
-      }
-    };
+    setIsLoading(true); // Set loading state to true initially
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser)); // Parse stored user data
+    } else {
+      const token = localStorage.getItem("token");
 
-    fetchUser();
+      getCustomerData(token)
+        .then((data) => {
+          setUser(data || {});
+        })
+        .finally(() => setIsLoading(false)); // Set loading state to false after fetching
+    }
   }, []);
 
-  const login = (token) => {
-    Cookies.set("token", token);
-    // Fetch user data again or set user data based on token
-  };
-
-  const logout = () => {
-    Cookies.remove("token");
-    setUser(null);
+  // Update user data logic (optional)
+  const updateUser = (newUser) => {
+    setUser(newUser);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <UserContext.Provider value={{ user, updateUser, isLoading }}>
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export default UserProvider;
+export { UserContext };

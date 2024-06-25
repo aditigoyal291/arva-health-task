@@ -8,7 +8,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className={cn("flex flex-col gap-10 px-4 sm:px-6 md:px-0")}>
+    <div className={cn("flex flex-col gap-10 px-4 sm:px-6 md:px-4")}>
       <section className="min-h-screen">
         <HeroText />
         {/* <Blob /> */}
