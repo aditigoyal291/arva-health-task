@@ -1,73 +1,72 @@
 [
-    {
-      "shopname": "Brewed Awakenings",
-      "email": "contact@brewedawakenings.com",
-      "password": "AwakeAndBrewed123",
-      "phone": "+1-555-123-4567",
-      "owner": "Sarah Johnson"
-    },
-    {
-      "shopname": "Espresso Express",
-      "email": "info@espressoexpress.com",
-      "password": "Express1234",
-      "phone": "+1-555-234-5678",
-      "owner": "Michael Smith"
-    },
-    {
-      "shopname": "Latte Lounge",
-      "email": "hello@lattelounge.com",
-      "password": "LoungeLove56",
-      "phone": "+1-555-345-6789",
-      "owner": "Emily Davis"
-    },
-    {
-      "shopname": "Mocha Moments",
-      "email": "support@mochamoments.com",
-      "password": "MomentsMocha77",
-      "phone": "+1-555-456-7890",
-      "owner": "James Wilson"
-    },
-    {
-      "shopname": "Cappuccino Corner",
-      "email": "contact@cappuccinocorner.com",
-      "password": "CornerCappuccino88",
-      "phone": "+1-555-567-8901",
-      "owner": "Olivia Brown"
-    },
-    {
-      "shopname": "Brew Brothers",
-      "email": "info@brewbrothers.com",
-      "password": "BrothersBrew99",
-      "phone": "+1-555-678-9012",
-      "owner": "William Johnson"
-    },
-    {
-      "shopname": "Java Junction",
-      "email": "support@javajunction.com",
-      "password": "JunctionJava66",
-      "phone": "+1-555-789-0123",
-      "owner": "Ava Martinez"
-    },
-    {
-      "shopname": "Frothy Fix",
-      "email": "hello@frothyfix.com",
-      "password": "FixFrothy44",
-      "phone": "+1-555-890-1234",
-      "owner": "Alexander Garcia"
-    },
-    {
-      "shopname": "Bean Scene",
-      "email": "contact@beanscene.com",
-      "password": "SceneBean22",
-      "phone": "+1-555-901-2345",
-      "owner": "Mia Anderson"
-    },
-    {
-      "shopname": "Grind House",
-      "email": "info@grindhouse.com",
-      "password": "HouseGrind11",
-      "phone": "+1-555-012-3456",
-      "owner": "Elijah Martinez"
-    }
-  ]
-  
+  {
+    "shopname": "Brewed Awakenings",
+    "email": "contact@brewedawakenings.com",
+    "password": "AwakeAndBrewed123",
+    "phonenumber": 15551234567,
+    "owner": "6679ad7301d4e19ea003a860"
+  },
+  {
+    "shopname": "Espresso Express",
+    "email": "info@espressoexpress.com",
+    "password": "Express1234",
+    "phonenumber": 15552345678,
+    "owner": "6679ad7301d4e19ea003a861"
+  },
+  {
+    "shopname": "Latte Lounge",
+    "email": "hello@lattelounge.com",
+    "password": "LoungeLove56",
+    "phonenumber": 15553456789,
+    "owner": "6679ad7301d4e19ea003a862"
+  },
+  {
+    "shopname": "Mocha Moments",
+    "email": "support@mochamoments.com",
+    "password": "MomentsMocha77",
+    "phonenumber": 15554567890,
+    "owner": "6679ad7301d4e19ea003a863"
+  },
+  {
+    "shopname": "Cappuccino Corner",
+    "email": "contact@cappuccinocorner.com",
+    "password": "CornerCappuccino88",
+    "phonenumber": 15555678901,
+    "owner": "6679ad7301d4e19ea003a864"
+  },
+  {
+    "shopname": "Brew Brothers",
+    "email": "info@brewbrothers.com",
+    "password": "BrothersBrew99",
+    "phonenumber": 15556789012,
+    "owner": "6679ad7301d4e19ea003a865"
+  },
+  {
+    "shopname": "Java Junction",
+    "email": "support@javajunction.com",
+    "password": "JunctionJava66",
+    "phonenumber": 15557890123,
+    "owner": "6679ad7301d4e19ea003a866"
+  },
+  {
+    "shopname": "Frothy Fix",
+    "email": "hello@frothyfix.com",
+    "password": "FixFrothy44",
+    "phonenumber": 15558901234,
+    "owner": "6679ad7301d4e19ea003a867"
+  },
+  {
+    "shopname": "Bean Scene",
+    "email": "contact@beanscene.com",
+    "password": "SceneBean22",
+    "phonenumber": 15559012345,
+    "owner": "6679ad7301d4e19ea003a868"
+  },
+  {
+    "shopname": "Grind House",
+    "email": "info@grindhouse.com",
+    "password": "HouseGrind11",
+    "phonenumber": 15550123456,
+    "owner": "6679ad7301d4e19ea003a869"
+  }
+]

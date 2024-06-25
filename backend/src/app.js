@@ -20,16 +20,17 @@ app.use(morgan("tiny"));
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
+app.use(cookieParser());
 
 app.use(cookieParser());
 
 // router imports
-import userRouter from "./routes/user.routes.js";
+import customerRouter from "./routes/customer.routes.js";
 import shopRouter from "./routes/shop.routes.js";
 import productRouter from "./routes/product.routes.js";
 
 // route declaration
-app.use("/api/v1/users", userRouter);
+app.use("/api/v1/users", customerRouter);
 app.use("/api/v1/shop", shopRouter);
 app.use("/api/v1/product", productRouter);
 

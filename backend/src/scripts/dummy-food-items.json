@@ -1,62 +1,62 @@
 [
   {
-    "itemname": "Cappuccino",
-    "itemprice": 3.5,
-    "itembelongs to": "Brewed Awakenings",
+    "itemName": "Cappuccino",
+    "itemPrice": 3.5,
+    "itembelongsto": "6679a52415286dc85ca3b545",
     "photo": "https://example.com/photos/cappuccino.jpg"
   },
   {
-    "itemname": "Espresso",
-    "itemprice": 2.75,
-    "itembelongs to": "Espresso Express",
+    "itemName": "Espresso",
+    "itemPrice": 2.75,
+    "itembelongsto": "6679a52415286dc85ca3b546",
     "photo": "https://example.com/photos/espresso.jpg"
   },
   {
-    "itemname": "Latte",
-    "itemprice": 4.0,
-    "itembelongs to": "Latte Lounge",
+    "itemName": "Latte",
+    "itemPrice": 4.0,
+    "itembelongsto": "6679a52415286dc85ca3b547",
     "photo": "https://example.com/photos/latte.jpg"
   },
   {
-    "itemname": "Mocha",
-    "itemprice": 4.5,
-    "itembelongs to": "Mocha Moments",
+    "itemName": "Mocha",
+    "itemPrice": 4.5,
+    "itembelongsto": "6679a52415286dc85ca3b548",
     "photo": "https://example.com/photos/mocha.jpg"
   },
   {
-    "itemname": "Americano",
-    "itemprice": 2.5,
-    "itembelongs to": "Cappuccino Corner",
+    "itemName": "Americano",
+    "itemPrice": 2.5,
+    "itembelongsto": "6679a52415286dc85ca3b549",
     "photo": "https://example.com/photos/americano.jpg"
   },
   {
-    "itemname": "Flat White",
-    "itemprice": 3.75,
-    "itembelongs to": "Brew Brothers",
+    "itemName": "Flat White",
+    "itemPrice": 3.75,
+    "itembelongsto": "6679a52415286dc85ca3b550",
     "photo": "https://example.com/photos/flat_white.jpg"
   },
   {
-    "itemname": "Macchiato",
-    "itemprice": 3.25,
-    "itembelongs to": "Java Junction",
+    "itemName": "Macchiato",
+    "itemPrice": 3.25,
+    "itembelongsto": "6679a52415286dc85ca3b551",
     "photo": "https://example.com/photos/macchiato.jpg"
   },
   {
-    "itemname": "Chai Latte",
-    "itemprice": 4.0,
-    "itembelongs to": "Frothy Fix",
+    "itemName": "Chai Latte",
+    "itemPrice": 4.0,
+    "itembelongsto": "6679a52415286dc85ca3b552",
     "photo": "https://example.com/photos/chai_latte.jpg"
   },
   {
-    "itemname": "Iced Coffee",
-    "itemprice": 3.0,
-    "itembelongs to": "Bean Scene",
+    "itemName": "Iced Coffee",
+    "itemPrice": 3.0,
+    "itembelongsto": "6679a52415286dc85ca3b553",
     "photo": "https://example.com/photos/iced_coffee.jpg"
   },
   {
-    "itemname": "Cold Brew",
-    "itemprice": 3.5,
-    "itembelongs to": "Grind House",
+    "itemName": "Cold Brew",
+    "itemPrice": 3.5,
+    "itembelongsto": "6679a52415286dc85ca3b554",
     "photo": "https://example.com/photos/cold_brew.jpg"
   }
 ]

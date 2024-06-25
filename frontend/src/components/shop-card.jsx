@@ -13,7 +13,7 @@ const ShopCard = ({
     <div className="flex flex-col gap-y-2">
       <Link to={`/explore/${_id}`} className="relative h-64 py-6">
         <img
-          className="absolute inset-0 h-full -z-10 w-full rounded-3xl object-cover"
+          className="absolute inset-0 -z-10 h-full w-full rounded-3xl object-cover"
           src={image}
           alt={name}
         />

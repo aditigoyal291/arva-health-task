@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@example.com",
+    "password": "SecurePass123!",
+    "phoneNumber": 15551234567
+  },
+  {
+    "name": "Michael Smith",
+    "email": "michael.smith@example.com",
+    "password": "Passw0rd456!",
+    "phoneNumber": 15552345678
+  },
+  {
+    "name": "Emily Davis",
+    "email": "emily.davis@example.com",
+    "password": "EmilyD2023!",
+    "phoneNumber": 15553456789
+  },
+  {
+    "name": "James Wilson",
+    "email": "james.wilson@example.com",
+    "password": "J4mesW2024!",
+    "phoneNumber": 15554567890
+  },
+  {
+    "name": "Olivia Brown",
+    "email": "olivia.brown@example.com",
+    "password": "Oliv1aB2023!",
+    "phoneNumber": 15555678901
+  },
+  {
+    "name": "William Johnson",
+    "email": "william.johnson@example.com",
+    "password": "W1lliamJ2023!",
+    "phoneNumber": 15556789012
+  },
+  {
+    "name": "Ava Martinez",
+    "email": "ava.martinez@example.com",
+    "password": "AvaM2023!",
+    "phoneNumber": 15557890123
+  },
+  {
+    "name": "Alexander Garcia",
+    "email": "alexander.garcia@example.com",
+    "password": "AlexG2023!",
+    "phoneNumber": 15558901234
+  },
+  {
+    "name": "Mia Anderson",
+    "email": "mia.anderson@example.com",
+    "password": "MiaA2023!",
+    "phoneNumber": 15559012345
+  },
+  {
+    "name": "Elijah Martinez",
+    "email": "elijah.martinez@example.com",
+    "password": "El1jahM2023!",
+    "phoneNumber": 15550123456
+  }
+]

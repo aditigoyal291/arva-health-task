@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+
 const fooditemsSchema = new mongoose.Schema({
     itemName:{
         type:String,
@@ -18,4 +19,4 @@ const fooditemsSchema = new mongoose.Schema({
         ref:'Shop'
     }
 },{timestamps:true});
-const Fooditems = mongoose.model('Fooditems', fooditemsSchema);
+export const Fooditems = mongoose.model('Fooditems', fooditemsSchema);

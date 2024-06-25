@@ -23,7 +23,7 @@ const coffeeshopownerSchema = new mongoose.Schema(
 
   { timestamps: true }
 );
-const CoffeeShopOwner = mongoose.model(
+export const CoffeeShopOwner = mongoose.model(
   "CoffeeShopOwner",
   coffeeshopownerSchema
 );

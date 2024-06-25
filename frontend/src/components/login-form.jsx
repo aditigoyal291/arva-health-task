@@ -4,9 +4,8 @@ import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 
-export default function SignupForm() {
+export default function LoginForm() {
   const [data, setData] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -20,29 +19,26 @@ export default function SignupForm() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/users/signup",
+        "http://localhost:8000/api/v1/users/login",
         data
       );
-      const res_data = res.data;
 
+      const res_data = res.data;
       setResponse(res_data);
       toast(res_data.message.title, {
         description: res_data.message.description,
       });
 
-      console.log(res_data);
+      console.log(res_data.data.token);
 
       if (rememberMe) {
         localStorage.setItem("token", res_data.data.token);
       }
-
-      setTimeout(() => {
-        window.location.href = "/auth/login";
-      }, 2000);
-
     } catch (err) {
       console.error(err);
-      toast("Error", { description: "An error occurred. Please try again." });
+      toast(res.message.title, {
+        description: res.message.description,
+      });
     } finally {
       setLoading(false);
     }
@@ -67,17 +63,17 @@ export default function SignupForm() {
               alt="Coffee shop"
             />
             <h2 className="mt-2 text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              Sign up to your account
+              Login to your account
             </h2>
           </div>
 
           <p className="mt-1 text-sm text-gray-500">
-            Already a member?
+            Not a member?
             <Link
-              to="/auth/login"
+              to="/auth/signup"
               className="ml-1 font-semibold leading-6 text-primary hover:text-primary/90"
             >
-              Login
+              Sign up
             </Link>
           </p>
 
@@ -88,26 +84,6 @@ export default function SignupForm() {
               action="#"
               method="POST"
             >
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Name
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    autoComplete="name"
-                    onChange={(e) => handleInput(e)}
-                    required
-                    className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
-
               <div>
                 <label
                   htmlFor="email"
@@ -136,6 +112,14 @@ export default function SignupForm() {
                   >
                     Password
                   </label>
+                  {/* <div className="text-sm">
+                    <a
+                      href="#"
+                      className="font-semibold text-primary hover:text-primary-foreground"
+                    >
+                      Forgot password?
+                    </a>
+                  </div> */}
                 </div>
                 <div className="mt-2">
                   <input
@@ -172,7 +156,7 @@ export default function SignupForm() {
                   disabled={loading}
                   className="hover:bg-primarytext-primary-foreground flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : "Sign up"}
+                  {loading ? <Loader2 className="animate-spin" /> : "Login"}
                 </button>
               </div>
             </form>
@@ -183,11 +167,12 @@ export default function SignupForm() {
         <img
           width={700}
           height={950}
-          src="/images/signup-thumbnail.jpg"
-          className="h-full w-full object-fill"
-          alt="Signup Thumbnail"
+          src="/images/login-thumbnail.jpg"
+          className="h-full w-full object-cover"
+          alt="Login Thumbnail"
         />
       </div>
+      {JSON.stringify(response, null, 2)}
     </div>
   );
 }
