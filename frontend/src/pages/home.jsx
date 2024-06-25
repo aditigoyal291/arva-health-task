@@ -18,7 +18,7 @@ const Home = () => {
     const getShops = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:8000/api/v1/shop/all");
+        const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/v1/shop/all`);
 
         setShops(res.data.data);
         // setShops(data.data)

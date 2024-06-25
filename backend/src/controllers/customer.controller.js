@@ -248,4 +248,55 @@ export const BookmarkShop = async (req, res) => {
   }
 };
 
+export const getBookmarkedShops = async (req, res) => {
+  const { user_id } = req.body;
+
+  try {
+    const customer = await Customer.findById(user_id).populate('bookmarks');
+    console.log(customer)
+
+    if (!customer) {
+      return res.status(404).json(
+        ApiResponse(
+          {
+            title: "Customer not found",
+            description: "The requested customer does not exist",
+          },
+          null,
+          404,
+          false
+        )
+      );
+    }
+
+    return res.status(200).json(
+      ApiResponse(
+        {
+          title: "Bookmarked shops found",
+          description: "Bookmarked shops found successfully",
+        },
+        customer,
+        200,
+        true
+      )
+    );
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json(
+      ApiResponse(
+        {
+          title: "Internal server error",
+          description: "An error occurred while processing your request",
+        },
+        null,
+        500,
+        false
+      )
+    );
+  }
+}
+
+
+
 export const LikeFoodItem = async (req, res) => {};
+

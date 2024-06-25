@@ -36,3 +36,28 @@ export async function getCustomerData(token) {
   }
   return null; // No token or other issues
 }
+
+
+
+export async function getDistance(origin, destination, apiKey){
+  try {
+    const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${origin}&destinations=${destination}&key=${apiKey}`;
+
+    const response = await axios.get(url);
+
+    if (response.data.status !== "OK") {
+      throw new Error("Error fetching data from Google Maps API");
+    }
+
+    const distance = response.data.rows[0].elements[0].distance.text;
+    const duration = response.data.rows[0].elements[0].duration.text;
+
+    return {
+      distance: distance,
+      duration: duration,
+    };
+  } catch (error) {
+    console.error("Error calculating distance:", error);
+    throw error;
+  }
+};

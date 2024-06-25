@@ -1,5 +1,6 @@
 [
   {
+    "_id": "60c72b2f4f1a2562d2f7e1f1",
     "itemName": "Espresso",
     "itemPrice": 2.5,
     "photo": "https://via.placeholder.com/150",
@@ -7,6 +8,7 @@
     "itemType": "coffee"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a1",
     "itemName": "Cappuccino",
     "itemPrice": 3.0,
     "photo": "https://via.placeholder.com/150",
@@ -14,6 +16,7 @@
     "itemType": "coffee"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a2",
     "itemName": "Latte",
     "itemPrice": 3.5,
     "photo": "https://via.placeholder.com/150",
@@ -21,6 +24,7 @@
     "itemType": "coffee"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a3",
     "itemName": "Blueberry Muffin",
     "itemPrice": 2.0,
     "photo": "https://via.placeholder.com/150",
@@ -28,6 +32,7 @@
     "itemType": "food"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a4",
     "itemName": "Croissant",
     "itemPrice": 2.5,
     "photo": "https://via.placeholder.com/150",
@@ -35,6 +40,7 @@
     "itemType": "food"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a5",
     "itemName": "Green Tea",
     "itemPrice": 2.0,
     "photo": "https://via.placeholder.com/150",
@@ -42,6 +48,7 @@
     "itemType": "drinks"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a6",
     "itemName": "Chai Latte",
     "itemPrice": 3.0,
     "photo": "https://via.placeholder.com/150",
@@ -49,6 +56,7 @@
     "itemType": "drinks"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a7",
     "itemName": "Americano",
     "itemPrice": 2.0,
     "photo": "https://via.placeholder.com/150",
@@ -56,6 +64,7 @@
     "itemType": "coffee"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a8",
     "itemName": "Bagel with Cream Cheese",
     "itemPrice": 2.5,
     "photo": "https://via.placeholder.com/150",
@@ -63,6 +72,7 @@
     "itemType": "food"
   },
   {
+    "_id": "60c72b2f4f1a2562d2f7e1a9",
     "itemName": "Hot Chocolate",
     "itemPrice": 2.5,
     "photo": "https://via.placeholder.com/150",

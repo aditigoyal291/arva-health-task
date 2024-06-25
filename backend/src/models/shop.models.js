@@ -16,9 +16,17 @@ const shopSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    location: {
+      type: String,
+      required: true,
+    },
     coverImages: {
       type: Array,
       default: [],
+    },
+    menu: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "Fooditems",
     },
     password: {
       type: String,

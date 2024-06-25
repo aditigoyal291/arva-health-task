@@ -7,7 +7,7 @@ const ExploreShopPage = () => {
 
   const [shop, setShop] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchShop = async () => {
@@ -15,11 +15,11 @@ const ExploreShopPage = () => {
         const response = await axios.get(
           `http://localhost:8000/api/v1/shop/${shopid}`
         );
+        console.log(response.data.data)
         setShop(response.data.data); // Accessing the data object
       } catch (err) {
-        setError(
-          err.response ? err.response.data.message : "Error fetching shop data"
-        );
+        console.error(err);
+        // setError(err);
       } finally {
         setLoading(false);
       }
@@ -28,15 +28,14 @@ const ExploreShopPage = () => {
     fetchShop();
   }, [shopid]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
-
   return (
     <div>
       {shop ? (
         <div>
-          <h1>{shop.name}</h1>
-          <p>{shop.description}</p>
+          <h1>{shop.shopname}</h1>
+          <p>{shop.email}</p>
+          <p>{shop.thumbnail}</p>
+          <p>{shop.location}</p>
         </div>
       ) : (
         <p>Shop not found</p>
