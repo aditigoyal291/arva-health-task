@@ -31,9 +31,11 @@ export default function LoginForm() {
 
       console.log(res_data.data.token);
 
-      if (rememberMe) {
-        localStorage.setItem("token", res_data.data.token);
-      }
+      // if (rememberMe) {
+      // }
+
+      localStorage.setItem("token", res_data.data.token);
+      window.location.href = "/";
     } catch (err) {
       console.error(err);
       toast(res.message.title, {
@@ -172,7 +174,6 @@ export default function LoginForm() {
           alt="Login Thumbnail"
         />
       </div>
-      {JSON.stringify(response, null, 2)}
     </div>
   );
 }

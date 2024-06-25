@@ -39,7 +39,7 @@ export const registerCustomer = async (req, res) => {
       token: token,
       bookmarks: customer.bookmarks,
     };
-    
+
     const message = {
       title: "Customer Registerd successfully",
       description: "You can now login to your account",
@@ -102,22 +102,79 @@ export const logoutCustomer = (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
 
-// Get Customer Profile
 export const getCustomerProfile = async (req, res) => {
-  const customer = await Customer.findById(req.customer.id);
+  try {
+    const token = req.headers["x-access-token"];
 
-  const message = {
-    title: "Customer found",
-    description: "Customer profile found",
-  };
+    if (!token) {
+      return res.status(401).json(
+        ApiResponse(
+          {
+            title: "Invalid token",
+            description: "Please login to continue",
+          },
+          null,
+          401,
+          false
+        )
+      );
+    }
 
-  if (customer) {
-    return res.status(200).json(ApiResponse(message, customer, 200, true));
-  } else {
-    const message = {
-      title: "Customer not found",
-      description: "Customer profile not found",
-    };
-    return res.status(404).json(ApiResponse(message, null, 404, false));
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    const { _id } = decoded; // Assuming '_id' is the property in the payload
+    if (!_id) {
+      return res.status(400).json(
+        ApiResponse(
+          {
+            title: "Invalid token format",
+            description: "Token does not contain a valid user ID",
+          },
+          null,
+          400,
+          false
+        )
+      );
+    }
+
+    const customer = await Customer.findById(_id);
+    if (!customer) {
+      return res.status(404).json(
+        ApiResponse(
+          {
+            message: "Customer not found",
+            description: "The requested customer does not exist",
+          },
+          null,
+          404,
+          false
+        )
+      );
+    }
+
+    return res.status(200).json(
+      ApiResponse(
+        {
+          title: "Customer found",
+          description: "Customer profile found",
+        },
+        customer,
+        200,
+        true
+      )
+    );
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json(
+      ApiResponse(
+        {
+          title: "Internal server error",
+          description: "An error occurred while processing your request",
+        },
+        null,
+        500,
+        false
+      )
+    );
   }
 };

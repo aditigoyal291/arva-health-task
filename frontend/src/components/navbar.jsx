@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "boring-avatars";
 import { Link } from "react-router-dom";
+import { getCustomerData } from "@/lib/utils";
 
 const Navbar = () => {
+  const [customer, setCustomer] = useState({});
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    getCustomerData(token).then((data) => setCustomer(data || {})); // Update state with user data
+  }, []);
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setCustomer({});
+    window.location.href = "/";
+  };
+
   return (
-    <div className="shadow-sm bg-primary px-4 py-1 sm:px-6 md:px-0">
+    <div className="bg-primary px-4 py-1 shadow-sm sm:px-6 md:px-0">
       <nav
         className="mx-auto flex max-w-screen-xl items-center justify-between"
         aria-label="Global"
@@ -19,6 +33,7 @@ const Navbar = () => {
           />
           <span className="sr-only">Home page</span>
         </Link>
+
         <ul className="flex flex-1 items-center justify-center gap-4 capitalize">
           <Link to="/" className="w-20 text-center text-white">
             home
@@ -32,13 +47,22 @@ const Navbar = () => {
           <Link to="/explore" className="w-20 text-center text-white">
             explore
           </Link>
-          <Link to="/auth/login" className="w-20 text-center text-white">
-            login
-          </Link>
-          <Link to="/auth/signup" className="w-20 text-center text-white">
-            signup
-          </Link>
-          {/* {!user ? (
+        </ul>
+        <div className="flex items-center gap-x-2">
+          {customer.name ? ( // Check if customer object has a 'name' property
+            <>
+              <button onClick={logout} className="w-20 text-center text-white">
+                logout
+              </button>
+              <Avatar
+                size={40}
+                name={customer.name || ""} // Use customer name for avatar
+                variant="beam"
+                colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
+                className="h-[6rem] w-[6rem] rounded-full"
+              />
+            </>
+          ) : (
             <>
               <Link to="/auth/login" className="w-20 text-center text-white">
                 login
@@ -47,23 +71,8 @@ const Navbar = () => {
                 signup
               </Link>
             </>
-          ) : (
-            <button
-              onClick={handleLogout}
-              className="w-20 text-center text-white"
-            >
-              logout
-            </button>
-          )} */}
-        </ul>
-          <Avatar
-            size={40}
-            name={"username"}
-            variant="beam"
-            colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
-            className="h-[6rem] w-[6rem] rounded-full"
-          />
-        
+          )}
+        </div>
       </nav>
     </div>
   );

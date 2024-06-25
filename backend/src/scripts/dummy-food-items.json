@@ -1,62 +1,72 @@
 [
   {
-    "itemName": "Cappuccino",
-    "itemPrice": 3.5,
-    "itembelongsto": "6679a52415286dc85ca3b545",
-    "photo": "https://example.com/photos/cappuccino.jpg"
+    "itemName": "Espresso",
+    "itemPrice": 2.5,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f1",
+    "itemType": "coffee"
   },
   {
-    "itemName": "Espresso",
-    "itemPrice": 2.75,
-    "itembelongsto": "6679a52415286dc85ca3b546",
-    "photo": "https://example.com/photos/espresso.jpg"
+    "itemName": "Cappuccino",
+    "itemPrice": 3.0,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f2",
+    "itemType": "coffee"
   },
   {
     "itemName": "Latte",
-    "itemPrice": 4.0,
-    "itembelongsto": "6679a52415286dc85ca3b547",
-    "photo": "https://example.com/photos/latte.jpg"
+    "itemPrice": 3.5,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f3",
+    "itemType": "coffee"
   },
   {
-    "itemName": "Mocha",
-    "itemPrice": 4.5,
-    "itembelongsto": "6679a52415286dc85ca3b548",
-    "photo": "https://example.com/photos/mocha.jpg"
+    "itemName": "Blueberry Muffin",
+    "itemPrice": 2.0,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f4",
+    "itemType": "food"
   },
   {
-    "itemName": "Americano",
+    "itemName": "Croissant",
     "itemPrice": 2.5,
-    "itembelongsto": "6679a52415286dc85ca3b549",
-    "photo": "https://example.com/photos/americano.jpg"
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f5",
+    "itemType": "food"
   },
   {
-    "itemName": "Flat White",
-    "itemPrice": 3.75,
-    "itembelongsto": "6679a52415286dc85ca3b550",
-    "photo": "https://example.com/photos/flat_white.jpg"
-  },
-  {
-    "itemName": "Macchiato",
-    "itemPrice": 3.25,
-    "itembelongsto": "6679a52415286dc85ca3b551",
-    "photo": "https://example.com/photos/macchiato.jpg"
+    "itemName": "Green Tea",
+    "itemPrice": 2.0,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f6",
+    "itemType": "drinks"
   },
   {
     "itemName": "Chai Latte",
-    "itemPrice": 4.0,
-    "itembelongsto": "6679a52415286dc85ca3b552",
-    "photo": "https://example.com/photos/chai_latte.jpg"
-  },
-  {
-    "itemName": "Iced Coffee",
     "itemPrice": 3.0,
-    "itembelongsto": "6679a52415286dc85ca3b553",
-    "photo": "https://example.com/photos/iced_coffee.jpg"
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f7",
+    "itemType": "drinks"
   },
   {
-    "itemName": "Cold Brew",
-    "itemPrice": 3.5,
-    "itembelongsto": "6679a52415286dc85ca3b554",
-    "photo": "https://example.com/photos/cold_brew.jpg"
+    "itemName": "Americano",
+    "itemPrice": 2.0,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f8",
+    "itemType": "coffee"
+  },
+  {
+    "itemName": "Bagel with Cream Cheese",
+    "itemPrice": 2.5,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1f9",
+    "itemType": "food"
+  },
+  {
+    "itemName": "Hot Chocolate",
+    "itemPrice": 2.5,
+    "photo": "https://via.placeholder.com/150",
+    "itembelongsto": "60c72b2f4f1a2562d2f7e1fa",
+    "itemType": "drinks"
   }
 ]
