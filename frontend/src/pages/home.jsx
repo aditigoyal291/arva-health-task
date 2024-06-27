@@ -10,6 +10,7 @@ import { coffeeShop } from "@/data/data";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const Home = () => {
   const [shops, setShops] = useState([]);
@@ -51,6 +52,10 @@ const Home = () => {
             isOpen={isLocationPromptOpen}
             onClose={handleLocationPromptClose}
           />
+          <Alert>
+            <AlertTitle>Heads up!</AlertTitle>
+            <AlertDescription>Your location is being tracked</AlertDescription>
+          </Alert>
           <section className="min-h-screen">
             <HeroText />
             {/* <Blob /> */}
