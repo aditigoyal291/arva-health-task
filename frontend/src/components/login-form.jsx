@@ -29,8 +29,6 @@ export default function LoginForm() {
         description: res_data.message.description,
       });
 
-      console.log(res_data.data.token);
-
       // if (rememberMe) {
       // }
 

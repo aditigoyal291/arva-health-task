@@ -16,6 +16,7 @@ import { Toaster } from "sonner";
 import Navbar from "./components/navbar";
 import ExploreShopPage from "./pages/explore-shop";
 import UserProvider from "./context/auth-context";
+import TestPage from "./pages/test";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
           <Route path="/explore/:shopid" element={<ExploreShopPage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/bookmarks" element={<BookmarkPage />} />
-          {/* <PrivateRoute element={<BookmarkPage />} /> */}
+          <Route path="/test123" element={<TestPage />} />
           <Route path="*" element={<Notfound />} />{" "}
         </Routes>
       </Router>

@@ -33,7 +33,6 @@ const ShopCard = ({
           user_id: user._id,
         }
       );
-      console.log(res.data);
       
       setIsShopBookmarked((prev) => !prev);
       

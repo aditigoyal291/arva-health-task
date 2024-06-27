@@ -1,3 +1,5 @@
+import FoodCard from "@/components/food-card";
+import ShopCard from "@/components/shop-card";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -7,7 +9,6 @@ const ExploreShopPage = () => {
 
   const [shop, setShop] = useState(null);
   const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchShop = async () => {
@@ -15,8 +16,7 @@ const ExploreShopPage = () => {
         const response = await axios.get(
           `http://localhost:8000/api/v1/shop/${shopid}`
         );
-        console.log(response.data.data)
-        setShop(response.data.data); // Accessing the data object
+        setShop(response.data.data); 
       } catch (err) {
         console.error(err);
         // setError(err);
@@ -31,12 +31,11 @@ const ExploreShopPage = () => {
   return (
     <div>
       {shop ? (
-        <div>
-          <h1>{shop.shopname}</h1>
-          <p>{shop.email}</p>
-          <p>{shop.thumbnail}</p>
-          <p>{shop.location}</p>
-        </div>
+        <section className="mx-auto grid max-w-screen-xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {shop.menu.map((fooditem, i) => (
+            <FoodCard key={i} fooditem={fooditem} />
+          ))}
+        </section>
       ) : (
         <p>Shop not found</p>
       )}

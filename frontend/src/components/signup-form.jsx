@@ -30,7 +30,6 @@ export default function SignupForm() {
         description: res_data.message.description,
       });
 
-      console.log(res_data);
 
       if (rememberMe) {
         localStorage.setItem("token", res_data.data.token);
