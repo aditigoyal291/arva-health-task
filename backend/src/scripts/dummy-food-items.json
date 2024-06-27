@@ -1,82 +1,102 @@
 [
   {
-    "_id": "60c72b2f4f1a2562d2f7e1f1",
-    "itemName": "Espresso",
-    "itemPrice": 2.5,
+    "itemName": "Mocha Latte",
+    "itemPrice": 4.99,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f1",
-    "itemType": "coffee"
+    "shop": "60d21b4667d0d8992e610c85",
+    "itemType": "coffee",
+    "tags": "chocolate, espresso",
+    "diet": "veg",
+    "calories": 200
   },
   {
-    "_id": "60c72b2f4f1a2562d2f7e1a1",
-    "itemName": "Cappuccino",
-    "itemPrice": 3.0,
-    "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f2",
-    "itemType": "coffee"
-  },
-  {
-    "_id": "60c72b2f4f1a2562d2f7e1a2",
-    "itemName": "Latte",
-    "itemPrice": 3.5,
-    "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f3",
-    "itemType": "coffee"
-  },
-  {
-    "_id": "60c72b2f4f1a2562d2f7e1a3",
     "itemName": "Blueberry Muffin",
-    "itemPrice": 2.0,
+    "itemPrice": 2.49,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f4",
-    "itemType": "food"
+    "shop": "60d21b4667d0d8992e610c86",
+    "itemType": "food",
+    "tags": "blueberry, muffin",
+    "diet": "veg",
+    "calories": 300
   },
   {
-    "_id": "60c72b2f4f1a2562d2f7e1a4",
-    "itemName": "Croissant",
-    "itemPrice": 2.5,
-    "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f5",
-    "itemType": "food"
-  },
-  {
-    "_id": "60c72b2f4f1a2562d2f7e1a5",
     "itemName": "Green Tea",
-    "itemPrice": 2.0,
+    "itemPrice": 1.99,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f6",
-    "itemType": "drinks"
+    "shop": "60d21b4667d0d8992e610c87",
+    "itemType": "drinks",
+    "tags": "tea, healthy",
+    "diet": "veg",
+    "calories": 0
   },
   {
-    "_id": "60c72b2f4f1a2562d2f7e1a6",
+    "itemName": "Ham and Cheese Sandwich",
+    "itemPrice": 5.49,
+    "photo": "https://via.placeholder.com/150",
+    "shop": "60d21b4667d0d8992e610c88",
+    "itemType": "food",
+    "tags": "ham, cheese, sandwich",
+    "diet": "non-veg",
+    "calories": 400
+  },
+  {
+    "itemName": "Espresso",
+    "itemPrice": 2.99,
+    "photo": "https://via.placeholder.com/150",
+    "shop": "60d21b4667d0d8992e610c89",
+    "itemType": "coffee",
+    "tags": "strong, espresso",
+    "diet": "veg",
+    "calories": 5
+  },
+  {
     "itemName": "Chai Latte",
-    "itemPrice": 3.0,
+    "itemPrice": 3.49,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f7",
-    "itemType": "drinks"
+    "shop": "60d21b4667d0d8992e610c90",
+    "itemType": "drinks",
+    "tags": "chai, spicy",
+    "diet": "veg",
+    "calories": 150
   },
   {
-    "_id": "60c72b2f4f1a2562d2f7e1a7",
-    "itemName": "Americano",
-    "itemPrice": 2.0,
+    "itemName": "Chocolate Cake",
+    "itemPrice": 4.99,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f8",
-    "itemType": "coffee"
+    "shop": "60d21b4667d0d8992e610c91",
+    "itemType": "food",
+    "tags": "chocolate, cake",
+    "diet": "veg",
+    "calories": 500
   },
   {
-    "_id": "60c72b2f4f1a2562d2f7e1a8",
-    "itemName": "Bagel with Cream Cheese",
-    "itemPrice": 2.5,
+    "itemName": "Vanilla Latte",
+    "itemPrice": 3.99,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1f9",
-    "itemType": "food"
+    "shop": "60d21b4667d0d8992e610c92",
+    "itemType": "coffee",
+    "tags": "vanilla, latte",
+    "diet": "veg",
+    "calories": 250
   },
   {
-    "_id": "60c72b2f4f1a2562d2f7e1a9",
-    "itemName": "Hot Chocolate",
-    "itemPrice": 2.5,
+    "itemName": "Caesar Salad",
+    "itemPrice": 6.99,
     "photo": "https://via.placeholder.com/150",
-    "itembelongsto": "60c72b2f4f1a2562d2f7e1fa",
-    "itemType": "drinks"
+    "shop": "60d21b4667d0d8992e610c93",
+    "itemType": "food",
+    "tags": "salad, healthy",
+    "diet": "non-veg",
+    "calories": 350
+  },
+  {
+    "itemName": "Iced Americano",
+    "itemPrice": 2.49,
+    "photo": "https://via.placeholder.com/150",
+    "shop": "60d21b4667d0d8992e610c94",
+    "itemType": "drinks",
+    "tags": "iced, americano",
+    "diet": "veg",
+    "calories": 5
   }
 ]
