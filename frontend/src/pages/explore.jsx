@@ -171,7 +171,7 @@ const ExplorePage = () => {
           </div>
         </div>
       </div>
-      {JSON.stringify(filteredItems, null, 2)}
+      {/* {JSON.stringify(filteredItems, null, 2)} */}
     </div>
   );
 };

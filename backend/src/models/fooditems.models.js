@@ -15,7 +15,7 @@ const fooditemsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    itembelongsto: {
+    shop: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Shop",
     },
@@ -24,6 +24,23 @@ const fooditemsSchema = new mongoose.Schema(
       enum: ["food", "drinks", "coffee"],
       required: true,
     },
+    tags:{
+      type: String,
+      required: true,
+      default:""
+    },
+    diet:{
+      type: String,
+      required: true,
+      enum:["veg","non-veg"]
+    },
+    calories:{
+      type: Number,
+      required: true
+    },
+
+
+
   },
   { timestamps: true }
 );
