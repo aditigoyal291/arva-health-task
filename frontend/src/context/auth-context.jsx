@@ -1,5 +1,5 @@
 import { getCustomerData } from "@/lib/utils";
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 
 const UserContext = createContext({ user: {}, isLoading: false });
 
@@ -36,4 +36,9 @@ const UserProvider = ({ children }) => {
 };
 
 export default UserProvider;
+
+export const useAuth = () => {
+  return useContext(UserContext)
+}
+
 export { UserContext };

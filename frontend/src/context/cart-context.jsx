@@ -7,12 +7,18 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  useEffect(()=>{
-    const cart = localStorage.getItem('cart');
-    if(cart){
-      setCart(JSON.parse(cart));
+  // Load cart from localStorage on initial render
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
     }
-  }, [])
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (foodItem) => {
     const existingItem = cart.find((item) => item.food._id === foodItem._id);
@@ -28,7 +34,7 @@ export const CartProvider = ({ children }) => {
       setCart([...cart, { food: foodItem, quantity: 1 }]);
     }
   };
-  
+
   const removeFromCart = (_id) => {
     const existingItem = cart.find((item) => item.food._id === _id);
     if (existingItem.quantity === 1) {
@@ -37,16 +43,15 @@ export const CartProvider = ({ children }) => {
       setCart(
         cart.map((item) =>
           item.food._id === _id
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-      )
-    );
-  }
-};
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+      );
+    }
+  };
 
-const clearCart = () => {
-  setCart([]);
-  localStorage.setItem('cart', JSON.stringify(cart));
+  const clearCart = () => {
+    setCart([]);
   };
 
   const getCartQty = () => {

@@ -36,7 +36,10 @@ const TestPage = () => {
 
   const shop = {
     shopname: "Test Shop",
-    location: "Test Location",
+    location: {
+      longitude: 40.33,
+      latitude: 32.33
+    },
   }
   return (
     <div className={cn("flex flex-col gap-10 px-4 sm:px-6 md:px-4")}>

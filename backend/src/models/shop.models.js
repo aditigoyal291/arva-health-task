@@ -17,8 +17,14 @@ const shopSchema = new mongoose.Schema(
       required: true,
     },
     location: {
-      type: String,
-      required: true,
+      latitude: {
+        type: Number,
+        required: true,
+      },
+      longitude: {
+        type: Number,
+        required: true,
+      },
     },
     coverImages: {
       type: [String],

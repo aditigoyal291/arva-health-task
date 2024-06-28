@@ -3,97 +3,174 @@
     "_id": "667aac0b8cabd74e7077c14a",
     "shopname": "Brewed Awakenings",
     "email": "contact@brewedawakenings.com",
-    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "phonenumber": 15551234567,
-    "owner": "6679ad7301d4e19ea003a860",
+    "thumbnail": "https://picsum.photos/200/300?random=1",
+    "location": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=2",
+      "https://picsum.photos/200/300?random=3"
+    ],
     "menu": ["667e5c2f33cbac4854e7ab5a"],
-    "location": "23.387940,85.232360"
+    "phonenumber": 15551234567,
+    "owner": "6679ad7301d4e19ea003a860"
   },
   {
     "_id": "667aac0b8cabd74e7077c14b",
     "shopname": "Espresso Express",
     "email": "info@espressoexpress.com",
-    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "thumbnail": "https://picsum.photos/200/300?random=4",
+    "location": {
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=5",
+      "https://picsum.photos/200/300?random=6"
+    ],
+    "menu": [
+      "667e5c2f33cbac4854e7ab5b",
+      "667e5c2f33cbac4854e7ab5c",
+      "667e5c2f33cbac4854e7ab5d"
+    ],
     "phonenumber": 15552345678,
-    "owner": "6679ad7301d4e19ea003a861",
-    "menu": ["667e5c2f33cbac4854e7ab5b", "667e5c2f33cbac4854e7ab5c", "667e5c2f33cbac4854e7ab5d"],
-    "location": "23.387940,85.232360"
+    "owner": "6679ad7301d4e19ea003a861"
   },
   {
     "_id": "667aac0b8cabd74e7077c14c",
     "shopname": "Latte Lounge",
     "email": "hello@lattelounge.com",
-    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "thumbnail": "https://picsum.photos/200/300?random=7",
+    "location": {
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=8",
+      "https://picsum.photos/200/300?random=9"
+    ],
+    "menu": [],
     "phonenumber": 15553456789,
-    "owner": "6679ad7301d4e19ea003a862",
-    "location": "23.387940,85.232360"
+    "owner": "6679ad7301d4e19ea003a862"
   },
   {
     "_id": "667aac0b8cabd74e7077c14d",
     "shopname": "Mocha Moments",
     "email": "support@mochamoments.com",
-    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "phonenumber": 15554567890,
-    "owner": "6679ad7301d4e19ea003a863",
+    "thumbnail": "https://picsum.photos/200/300?random=10",
+    "location": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=11",
+      "https://picsum.photos/200/300?random=12"
+    ],
     "menu": ["667e5c2f33cbac4854e7ab5e"],
-    "location": "23.387940,85.232360"
+    "phonenumber": 15554567890,
+    "owner": "6679ad7301d4e19ea003a863"
   },
   {
     "_id": "667aac0b8cabd74e7077c13d",
     "shopname": "Cappuccino Corner",
     "email": "contact@cappuccinocorner.com",
-    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "phonenumber": 15555678901,
-    "location": "23.387940,85.232360",
+    "thumbnail": "https://picsum.photos/200/300?random=13",
+    "location": {
+      "latitude": 48.8566,
+      "longitude": 2.3522
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=14",
+      "https://picsum.photos/200/300?random=15"
+    ],
     "menu": ["667e5c2f33cbac4854e7ab6e", "667e5c2f33cbac4854e7ab7e"],
+    "phonenumber": 15555678901,
     "owner": "6679ad7301d4e19ea003a864"
   },
   {
     "_id": "667aac0b8cabd74e7077c12d",
     "shopname": "Brew Brothers",
     "email": "info@brewbrothers.com",
-    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "phonenumber": 15556789012,
-    "location": "23.387940,85.232360",
+    "thumbnail": "https://picsum.photos/200/300?random=16",
+    "location": {
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=17",
+      "https://picsum.photos/200/300?random=18"
+    ],
     "menu": ["667e5c2f33cbac4854e7ab8e"],
+    "phonenumber": 15556789012,
     "owner": "6679ad7301d4e19ea003a865"
   },
   {
     "_id": "667aac0b8cabd74e7077c11d",
     "shopname": "Java Junction",
     "email": "support@javajunction.com",
-    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "thumbnail": "https://picsum.photos/200/300?random=19",
+    "location": {
+      "latitude": 55.7558,
+      "longitude": 37.6173
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=20",
+      "https://picsum.photos/200/300?random=21"
+    ],
+    "menu": [],
     "phonenumber": 15557890123,
-    "owner": "6679ad7301d4e19ea003a866",
-    "location": "23.387940,85.232360"
+    "owner": "6679ad7301d4e19ea003a866"
   },
   {
     "_id": "667aac0b8cabd74e7077c10d",
     "shopname": "Frothy Fix",
     "email": "hello@frothyfix.com",
-    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "phonenumber": 15558901234,
-    "location": "23.387940,85.232360",
+    "thumbnail": "https://picsum.photos/200/300?random=22",
+    "location": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=23",
+      "https://picsum.photos/200/300?random=24"
+    ],
     "menu": ["667e5c2f33cbac4854e7ab9e"],
+    "phonenumber": 15558901234,
     "owner": "6679ad7301d4e19ea003a867"
   },
   {
     "_id": "667aac0b8cabd74e7077c00d",
     "shopname": "Bean Scene",
     "email": "contact@beanscene.com",
-    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "phonenumber": 15559012345,
-    "location": "23.387940,85.232360",
+    "thumbnail": "https://picsum.photos/200/300?random=25",
+    "location": {
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=26",
+      "https://picsum.photos/200/300?random=27"
+    ],
     "menu": ["667e5c2f33cbac4854e7ab0e"],
+    "phonenumber": 15559012345,
     "owner": "6679ad7301d4e19ea003a868"
   },
   {
     "_id": "667aac0b8cabd74e7077c90d",
     "shopname": "Grind House",
     "email": "info@grindhouse.com",
-    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "thumbnail": "https://picsum.photos/200/300?random=28",
+    "location": {
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    "coverImages": [
+      "https://picsum.photos/200/300?random=29",
+      "https://picsum.photos/200/300?random=30"
+    ],
+    "menu": [],
     "phonenumber": 15550123456,
-    "location": "23.387940,85.232360",
     "owner": "6679ad7301d4e19ea003a869"
   }
 ]

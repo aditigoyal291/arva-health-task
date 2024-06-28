@@ -47,9 +47,6 @@ const Navbar = () => {
           <Link to="/" className="w-20 text-center text-white">
             home
           </Link>
-          <Link to="/cart" className="w-20 text-center text-white">
-            cart
-          </Link>
           <Link to="/bookmarks" className="w-20 text-center text-white">
             bookmarks
           </Link>

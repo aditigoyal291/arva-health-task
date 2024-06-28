@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const FoodCard = ({ fooditem, shop: { shopname, location } }) => {
+const FoodCard = ({isAuthenticated=false, fooditem, shop: { shopname } }) => {
   const { cart, addToCart, removeFromCart } = useCart();
   const cartItem = cart.find((item) => item.food._id === fooditem._id);
   const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 0);
@@ -35,7 +35,7 @@ const FoodCard = ({ fooditem, shop: { shopname, location } }) => {
   };
 
   return (
-    <div className="relative flex gap-x-4 rounded-lg bg-white p-2">
+    <div className="relative flex gap-x-4 w-full rounded-lg bg-white p-2">
       <div className="h-40 w-40 shrink-0 overflow-hidden rounded-lg">
         <img
           src={fooditem.photo}
@@ -101,15 +101,17 @@ const FoodCard = ({ fooditem, shop: { shopname, location } }) => {
           </span>
         </div>
 
-        <div className="flex min-w-52 flex-1 items-center justify-between">
+        <div className="flex flex-1 items-center justify-between">
           <span className="text-xl font-bold tracking-tight">
             ₹{fooditem.itemPrice}
           </span>
+          {isAuthenticated &&
           <AddtoCartButton
             handleDec={handleDec}
             handleInc={handleInc}
             quantity={quantity}
           />
+          }
         </div>
       </div>
     </div>
@@ -118,19 +120,19 @@ const FoodCard = ({ fooditem, shop: { shopname, location } }) => {
 
 export default FoodCard;
 
-const AddtoCartButton = ({ quantity, handleDec, handleInc }) => {
+export const AddtoCartButton = ({ quantity, handleDec, handleInc }) => {
   if (quantity === 0) {
     return (
       <button
         onClick={handleInc}
-        className="flex items-center gap-x-1 rounded-full bg-primary px-2.5 py-0.5 text-white"
+        className="mr-2 flex items-center gap-x-1 rounded-full bg-primary px-2.5 py-0.5 text-white"
       >
         <Plus size={18} /> <span>Add</span>
       </button>
     );
   } else {
     return (
-      <div className="flex items-center gap-x-1 rounded-full bg-primary px-2.5 py-0.5">
+      <div className="mr-2 flex items-center gap-x-1 rounded-full bg-primary px-2.5 py-0.5">
         <button
           onClick={handleDec}
           className="rounded-l-full px-0.5 py-0.5 text-white"
@@ -149,8 +151,8 @@ const AddtoCartButton = ({ quantity, handleDec, handleInc }) => {
   }
 };
 
-const ItemTypeIcon = ({ itemType }) => {
-  if (itemType === "drinks") return <CupSoda size={12} />;
-  else if (itemType === "coffee") return <Coffee size={12} />;
-  else return <CookingPot size={12} />;
+export const ItemTypeIcon = ({ itemType }) => {
+  if (itemType === "drinks") return <CupSoda size={14} />;
+  else if (itemType === "coffee") return <Coffee size={14} />;
+  else return <CookingPot size={14} />;
 };

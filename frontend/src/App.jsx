@@ -19,6 +19,7 @@ import UserProvider from "./context/auth-context";
 import TestPage from "./pages/test";
 import { CartProvider } from "./context/cart-context";
 import CartPage from "./pages/cart";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="*" element={<Notfound />} />{" "}
           </Routes>
         </Router>
+        <Footer />
         <Toaster />
       </CartProvider>
     </UserProvider>
