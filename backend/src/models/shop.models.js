@@ -21,17 +21,15 @@ const shopSchema = new mongoose.Schema(
       required: true,
     },
     coverImages: {
-      type: Array,
+      type: [String],
       default: [],
     },
-    menu: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: "Fooditems",
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+    menu: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Fooditem",
+      },
+    ],
     phonenumber: {
       type: Number,
       required: true,

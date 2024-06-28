@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,25 +17,30 @@ import Navbar from "./components/navbar";
 import ExploreShopPage from "./pages/explore-shop";
 import UserProvider from "./context/auth-context";
 import TestPage from "./pages/test";
+import { CartProvider } from "./context/cart-context";
+import CartPage from "./pages/cart";
 
 function App() {
   return (
     <UserProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/auth/signup" element={<Signup />} />
-          <Route path="/auth/login" element={<Login />} />
-          <Route path="/explore/:shopid" element={<ExploreShopPage />} />
-          <Route path="/explore" element={<ExplorePage />} />
-          <Route path="/bookmarks" element={<BookmarkPage />} />
-          <Route path="/test123" element={<TestPage />} />
-          <Route path="*" element={<Notfound />} />{" "}
-        </Routes>
-      </Router>
-      <Toaster />
+      <CartProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/auth/signup" element={<Signup />} />
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/explore/:shopid" element={<ExploreShopPage />} />
+            <Route path="/explore" element={<ExplorePage />} />
+            <Route path="/bookmarks" element={<BookmarkPage />} />
+            <Route path="/test123" element={<TestPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="*" element={<Notfound />} />{" "}
+          </Routes>
+        </Router>
+        <Toaster />
+      </CartProvider>
     </UserProvider>
   );
 }

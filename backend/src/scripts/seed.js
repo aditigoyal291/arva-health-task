@@ -7,7 +7,7 @@ import ShopData from "./dummy-coffeeshop.json" assert { type: "json" };
 import ownerData from "./dummy-owner.json" assert { type: "json" };
 import ReviewData from "./dummy-reviews.json" assert { type: "json" };
 import { Customer } from "../models/customer.models.js";
-import { Fooditems } from "../models/fooditems.models.js";
+import { Fooditem } from "../models/fooditems.models.js";
 import { Shop } from "../models/shop.models.js";
 import { CoffeeShopOwner } from "../models/coffeeshopowner.models.js";
 import { Review } from "../models/review.models.js";
@@ -34,9 +34,9 @@ const load = async () => {
       await Customer.insertMany(CustomerData);
       console.log("✓" + " [2/2] " + chalk.green("Added new customers data"));
 
-      await Fooditems.deleteMany();
+      await Fooditem.deleteMany();
       console.log("✓" + " [1/2] " + chalk.red("Deleted fooditems records"));
-      await Fooditems.insertMany(FooditemsData);
+      await Fooditem.insertMany(FooditemsData);
       console.log("✓" + " [2/2] " + chalk.green("Added new fooditems data"));
 
       await CoffeeShopOwner.deleteMany();

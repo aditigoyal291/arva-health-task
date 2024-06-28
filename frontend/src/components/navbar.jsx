@@ -2,9 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import Avatar from "boring-avatars";
 import { Link } from "react-router-dom";
 import { UserContext } from "@/context/auth-context";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/cart-context";
 
 const Navbar = () => {
   const { user, isLoading, updateUser } = useContext(UserContext);
+  const { getCartQty } = useCart();
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -44,15 +47,23 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="flex items-center gap-x-2">
-          {isLoading && <p>Loading...</p>}
-          {user.name ? ( // Check if customer object has a 'name' property
+          {user.name ? (
             <>
               <button onClick={logout} className="w-20 text-center text-white">
                 logout
               </button>
+              <Link to="/cart" className="relative mr-2">
+                {getCartQty() !== 0 && (
+                  <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#ece9ea] text-sm font-medium text-primary">
+                    {getCartQty()}
+                  </span>
+                )}
+                <ShoppingCart className="text-white" size={24} />
+              </Link>
               <Avatar
                 size={40}
-                name={user.name || ""} // Use customer name for avatar
+                name={user.name || ""}
+                r
                 variant="beam"
                 colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
                 className="h-[6rem] w-[6rem] rounded-full"

@@ -19,8 +19,7 @@ export async function getCustomerData(token) {
           },
         }
       );
-      console.log(data.data);
-      return data?.data || null;
+      return data?.data;
     } catch (error) {
       console.error("Error fetching customer data:", error);
 
