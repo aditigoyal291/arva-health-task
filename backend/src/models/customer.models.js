@@ -30,16 +30,22 @@ const customerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    likes: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: "Fooditems",
-      default: [],
-    },
-    bookmarks: {
+    likes: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Fooditem",
+    }],
+    bookmarks: [{
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Shop",
-      default: [],
-    },
+    }],
+    orders: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Order",
+    }],
+    reviews: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
+    }],
   },
   { timestamps: true }
 );

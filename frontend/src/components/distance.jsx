@@ -68,7 +68,7 @@ const Distance = ({ destination }) => {
       getCurrentLocation();
     } else {
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key="API"&libraries=places`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCSKWQxL9Ohla8ksCNm5Kba4IC03Si14CY&libraries=places`;
       script.onload = () => {
         getCurrentLocation();
       };
@@ -77,7 +77,7 @@ const Distance = ({ destination }) => {
   }, [destination]);
 
   return (
-    <LoadScript googleMapsApiKey="API">
+    <LoadScript googleMapsApiKey="AIzaSyCSKWQxL9Ohla8ksCNm5Kba4IC03Si14CY">
       <div>
         <h1>Distance and Time Calculator</h1>
         {loading ? (

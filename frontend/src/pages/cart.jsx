@@ -35,6 +35,7 @@ const CartPage = () => {
                 isAuthenticated={isAuthenticated}
                 key={fooditem._id}
                 fooditem={fooditem.food}
+                // foodquantity={fooditem.quantity}
                 shop={{ shopname: "Test Shop", location: "Test Location" }}
               />
             ))

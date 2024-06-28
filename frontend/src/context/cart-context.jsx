@@ -5,15 +5,11 @@ export const CartContext = createContext();
 
 // Cart provider component
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-
-  // Load cart from localStorage on initial render
-  useEffect(() => {
+  const [cart, setCart] = useState(() => {
+    // Load cart from localStorage on initial render
     const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
@@ -21,33 +17,35 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   const addToCart = (foodItem) => {
-    const existingItem = cart.find((item) => item.food._id === foodItem._id);
-    if (existingItem) {
-      setCart(
-        cart.map((item) =>
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) => item.food._id === foodItem._id
+      );
+      if (existingItem) {
+        return prevCart.map((item) =>
           item.food._id === foodItem._id
             ? { ...item, quantity: item.quantity + 1 }
             : item
-        )
-      );
-    } else {
-      setCart([...cart, { food: foodItem, quantity: 1 }]);
-    }
+        );
+      } else {
+        return [...prevCart, { food: foodItem, quantity: 1 }];
+      }
+    });
   };
 
   const removeFromCart = (_id) => {
-    const existingItem = cart.find((item) => item.food._id === _id);
-    if (existingItem.quantity === 1) {
-      setCart(cart.filter((item) => item.food._id !== _id));
-    } else {
-      setCart(
-        cart.map((item) =>
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.food._id === _id);
+      if (existingItem.quantity === 1) {
+        return prevCart.filter((item) => item.food._id !== _id);
+      } else {
+        return prevCart.map((item) =>
           item.food._id === _id
             ? { ...item, quantity: item.quantity - 1 }
             : item
-        )
-      );
-    }
+        );
+      }
+    });
   };
 
   const clearCart = () => {

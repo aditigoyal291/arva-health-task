@@ -20,6 +20,7 @@ import TestPage from "./pages/test";
 import { CartProvider } from "./context/cart-context";
 import CartPage from "./pages/cart";
 import Footer from "./components/footer";
+import ProfilePage from "./pages/profile";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="/bookmarks" element={<BookmarkPage />} />
             <Route path="/test123" element={<TestPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<Notfound />} />{" "}
           </Routes>
         </Router>

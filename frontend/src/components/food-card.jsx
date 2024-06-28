@@ -90,7 +90,7 @@ const FoodCard = ({isAuthenticated=false, fooditem, shop: { shopname } }) => {
         <div className="flex items-center gap-x-2">
           <span className="flex items-center gap-x-1 rounded border border-[#e5b80b] px-2 py-0.5 text-xs font-semibold">
             <Star size={12} className="fill-[#e5b80b] stroke-[#e5b80b]" />{" "}
-            <span>{fooditem.ratings}</span>
+            <span>{fooditem.ratings || 4.5}</span>
           </span>
           <span>|</span>
           <span className="text-xs font-medium">{fooditem.calories} Kal</span>
@@ -103,7 +103,7 @@ const FoodCard = ({isAuthenticated=false, fooditem, shop: { shopname } }) => {
 
         <div className="flex flex-1 items-center justify-between">
           <span className="text-xl font-bold tracking-tight">
-            ₹{fooditem.itemPrice}
+            ${fooditem.itemPrice}
           </span>
           {isAuthenticated &&
           <AddtoCartButton

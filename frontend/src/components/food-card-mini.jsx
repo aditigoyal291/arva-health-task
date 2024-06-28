@@ -1,4 +1,4 @@
-import { MapPin, Minus, Plus } from "lucide-react";
+import { MapPin, Minus, Plus, Zap } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useCart } from "@/context/cart-context";
 import { ItemTypeIcon } from "./food-card";
@@ -48,13 +48,30 @@ const FoodCardMini = ({
           {fooditem.itemName}
           <ItemTypeIcon className="inline font-medium" />
         </h3>
-        <p className="flex items-center gap-x-1">
-          <MapPin size={16} />{" "}
-          <span className="text-sm font-medium text-foreground">
-            {shopname}
+        <p className="flex items-center gap-x-3">
+          <span
+            className={cn(
+              "flex items-center justify-center rounded border-2",
+              fooditem.diet === "veg" ? "border-teal-600" : "border-red-600"
+            )}
+          >
+            <span
+              className={cn(
+                "m-1 h-2 w-2 rounded-full",
+                fooditem.diet === "veg" ? "bg-teal-600" : "bg-red-600"
+              )}
+            />
+          </span>
+          <span className="flex items-center gap-x-1">
+            <Zap size={16} />{" "}
+            <span className="text-sm font-medium text-foreground">
+              {fooditem.calories} Cal
+            </span>
           </span>
         </p>
       </div>
+
+      <p className="w-20">&times;{quantity}</p>
 
       <p className="text-base font-bold tracking-tight">
         ${fooditem.itemPrice}

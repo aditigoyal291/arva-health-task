@@ -85,27 +85,27 @@ const Navbar = () => {
                       "#C271B4",
                       "#C20D90",
                     ]}
-                    className="rounded-full"
+                    className="rounded-full cursor-pointer"
                   />
                 </HoverCardTrigger>
                 <HoverCardContent>
                   <section className="flex flex-col gap-y-2">
-                    <p className="rounded-lg border p-1.5 hover:shadow-xl">
+                    <p className="rounded-lg p-1.5 hover:shadow-xl">
                       {user.name}
                     </p>
-                    <p className="rounded-lg border p-1.5 hover:shadow-xl">
+                    <p className="rounded-lg p-1.5 hover:shadow-xl">
                       {user.email}
                     </p>
                     <div className="flex w-full justify-between gap-x-3">
                       <button
-                        className="w-full rounded-lg border p-1.5 hover:shadow-xl"
+                        className="w-full rounded-lg p-1.5 hover:shadow-xl"
                         onClick={logout}
                       >
                         Logout
                       </button>
-                      <button className="w-full rounded-lg border p-1.5 hover:shadow-xl">
+                      <Link to="/profile" className="w-full rounded-lg p-1.5 hover:shadow-xl">
                         Profile
-                      </button>
+                      </Link>
                     </div>
                   </section>
                 </HoverCardContent>
