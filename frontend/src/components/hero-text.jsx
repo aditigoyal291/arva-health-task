@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const HeroText = () => {
   return (
     <>
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:">
         <div className="hidden sm:mb-8 sm:flex sm:justify-center">
        
         </div>

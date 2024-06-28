@@ -1,25 +1,25 @@
 import FoodCard from "@/components/food-card";
-import ShopCard from "@/components/shop-card";
+import FoodCardSkeleton from "@/components/skeleton/food-card-skeleton";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ExploreShopPage = () => {
   const { shopid } = useParams();
-
-  const [shop, setShop] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [food, setFood] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchShop = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(
-          `http://localhost:8000/api/v1/shop/${shopid}`
+          `http://localhost:8000/api/v1/fooditems/shop/${shopid}`
         );
-        setShop(response.data.data); 
+        setFood(response.data.data);
+        // console.log(shop);
       } catch (err) {
         console.error(err);
-        // setError(err);
       } finally {
         setLoading(false);
       }
@@ -29,18 +29,20 @@ const ExploreShopPage = () => {
   }, [shopid]);
 
   return (
-    <div>
-      {shop ? (
-        <section className="mx-auto grid max-w-screen-xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {shop.menu.map((fooditem, i) => (
-            <FoodCard key={i} fooditem={fooditem} />
-          ))}
-        </section>
-      ) : (
-        <p>Shop not found</p>
-      )}
+    <div className="flex flex-col mt-6 gap-10 px-4 sm:px-6 md:px-4">
+      <section className="mx-auto grid max-w-screen-xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {loading
+          ? Array(12)
+              .fill(0)
+              .map((_, i) => <FoodCardSkeleton key={i} />)
+          : food?.map((fooditem) => (
+              <FoodCard key={fooditem._id} fooditem={fooditem} />
+            ))}
+      </section>
     </div>
   );
 };
 
 export default ExploreShopPage;
+
+

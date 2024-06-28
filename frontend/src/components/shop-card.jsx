@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { Bookmark, Heart, Loader2, Star } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -22,7 +22,10 @@ const ShopCard = ({
   const [isShopBookmarked, setIsShopBookmarked] = useState(
     user?.bookmarks?.includes(_id)
   );
-  
+
+  const [distancediff, setDistanceDiff] = useState("");
+  const [duration, setDuration] = useState("");
+
   const handleLike = async (shop_id) => {
     setBookMarkLoading(true);
     try {
@@ -33,9 +36,9 @@ const ShopCard = ({
           user_id: user._id,
         }
       );
-      
+
       setIsShopBookmarked((prev) => !prev);
-      
+
       toast(res.data.message.title, {
         description: res.data.message.description,
       });
@@ -49,6 +52,27 @@ const ShopCard = ({
       console.log(user);
     }
   };
+  /** @type React.MutableRefObject<HTMLInputElement> */
+  const originRef = useRef();
+  /** @type React.MutableRefObject<HTMLInputElement> */
+  const destinationRef = useRef();
+
+  async function calculateRoute() {
+    if (originRef.current.value === "" || destinationRef.current.value === "") {
+      return;
+    }
+    // eslint-disable-next-line no-undef
+    const directionsService = new google.maps.DirectionsService();
+    const results = await directionsService.route({
+      origin: originRef.current.value,
+      destination: destinationRef.current.value,
+      // eslint-disable-next-line no-undef
+      travelMode: google.maps.TravelMode.DRIVING,
+    });
+    setDirectionsResponse(results);
+    setDistanceDiff(results.routes[0].legs[0].distancediff.text);
+    setDuration(results.routes[0].legs[0].duration.text);
+  }
 
   return (
     <div className="relative flex flex-col gap-y-2">
@@ -77,7 +101,7 @@ const ShopCard = ({
         </button>
       )}
       <div className="space-y-1">
-        <p className="text-base font-bold truncate">{shopname}</p>
+        <p className="truncate text-base font-bold">{shopname}</p>
         {/* <span className="text-xs font-semibold">{_id}</span> */}
         <div className="flex justify-start gap-x-3 text-sm">
           <span className="flex items-center gap-x-2 font-medium tabular-nums">
@@ -88,7 +112,7 @@ const ShopCard = ({
             {reviews} reviews
           </span>
         </div>
-        <span className="text-sm font-semibold tabular-nums">
+        <span className="text-sm font-semibold tabular-nums" ref={destinationRef}>
           {distance} miles
         </span>
       </div>

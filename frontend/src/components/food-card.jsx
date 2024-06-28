@@ -1,5 +1,13 @@
 import { cn } from "@/lib/utils";
-import { MapPin, Minus, Plus, Star } from "lucide-react";
+import {
+  Coffee,
+  CookingPot,
+  CupSoda,
+  MapPin,
+  Minus,
+  Plus,
+  Star,
+} from "lucide-react";
 import { useState } from "react";
 
 const FoodCard = ({
@@ -51,11 +59,9 @@ const FoodCard = ({
         </div>
 
         <div>
-          {/* <p className="text-sm font-medium text-foreground">{shopname}</p> */}
           <p className="flex items-center gap-x-2">
             <MapPin size={16} />{" "}
             <span className="text-sm font-medium text-foreground">
-              {/* {location} */}
               {shopname}
             </span>
           </p>
@@ -79,7 +85,12 @@ const FoodCard = ({
             <span>{ratings}</span>
           </span>
           <span>|</span>
-          <span className="text-sm font-medium">{calories} Kal</span>
+          <span className="text-xs font-medium">{calories} Kal</span>
+          <span>|</span>
+          <span className="flex items-center gap-x-1">
+            <ItemTypeIcon itemType={itemType} />
+            <span className="text-xs font-medium">{itemType}</span>
+          </span>
         </div>
 
         <div className="flex min-w-52 flex-1 items-center justify-between">
@@ -128,4 +139,10 @@ const AddtoCartButton = ({ quantity, setQuantity }) => {
       </div>
     );
   }
+};
+
+const ItemTypeIcon = ({ itemType }) => {
+  if (itemType === "drink") return <CupSoda size={10} />;
+  else if (itemType === "coffee") return <Coffee size={10} />;
+  else return <CookingPot size={10} />;
 };

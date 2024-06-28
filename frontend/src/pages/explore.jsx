@@ -23,6 +23,7 @@ const ExplorePage = () => {
           `http://localhost:8000/api/v1/fooditems/all`
         );
         setFoodItems(response.data.data);
+        console.log(food)
       } catch (error) {
         console.log(error);
         // err.response ? err.response.data.message : "Error fetching food items"

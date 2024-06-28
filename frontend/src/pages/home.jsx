@@ -11,15 +11,68 @@ import { cn } from "@/lib/utils";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { toast } from "sonner";
 
 const Home = () => {
   const [shops, setShops] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user, isLoading } = useContext(UserContext);
-  const [isLocationPromptOpen, setLocationPromptOpen] = useState(true);
+  const [isLocationPromptOpen, setLocationPromptOpen] = useState(false);
+  const [location, setLocation] = useState(null);
+  useEffect(() => {
+    const storedLocation = localStorage.getItem("userLocation");
+    if (storedLocation) {
+      setLocation(JSON.parse(storedLocation));
+    } else {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(saveLocation, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+  }, []);
+  const saveLocation = (position) => {
+    const userLocation = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    };
+    localStorage.setItem("userLocation", JSON.stringify(userLocation));
+    setLocation(userLocation);
+  };
 
-  const handleLocationPromptClose = () => {
-    setLocationPromptOpen(false);
+  
+  const showError = (error) => {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        alert("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        alert("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.");
+        break;
+      default:
+        alert("An error occurred.");
+    }
+  };
+
+  const handleLocationPromptClose = async () => {
+    setLocationPromptOpen(true);
+    toast("Location access granted", {
+      description: "You have successfully granted location access",
+    });
+    const location = await axios.get("https://ipapi.co/json");
+    // console.log("Location:", location);
+    setCurrLocation(location.data);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(saveLocation, showError);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
   };
   useEffect(() => {
     const getShops = async () => {
@@ -40,24 +93,28 @@ const Home = () => {
 
     getShops();
   }, []);
+
+  const [currLocation, setCurrLocation] = useState({});
   return (
-    <div
-      className={`h-screen ${isLocationPromptOpen ? "bg-gray-800" : "bg-white"} transition-colors duration-300`}
-    >
+    <div>
       <div className={cn("flex flex-col gap-10 px-4 sm:px-6 md:px-4")}>
         <div
-          className={`p-6 ${isLocationPromptOpen ? "opacity-50" : "opacity-100"} transition-opacity duration-300`}
+          className={`p-6 ${!isLocationPromptOpen ? "" : "opacity-100"} transition-opacity duration-300`}
         >
-          <LocationPrompt
-            isOpen={isLocationPromptOpen}
-            onClose={handleLocationPromptClose}
-          />
-          <Alert>
-            <AlertTitle>Heads up!</AlertTitle>
-            <AlertDescription>Your location is being tracked</AlertDescription>
-          </Alert>
+          {!location && (
+            <LocationPrompt
+              isOpen={!isLocationPromptOpen}
+              onClose={handleLocationPromptClose}
+            />
+          )}
+        </div>
+        <div
+         
+        >
           <section className="min-h-screen">
+            
             <HeroText />
+            <p>{currLocation.city}</p>
             {/* <Blob /> */}
 
             <section className="mx-auto grid max-w-screen-xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
