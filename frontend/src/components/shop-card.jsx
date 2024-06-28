@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { Bookmark, Heart, Loader2, Star } from "lucide-react";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import Distance from "./distance";
 
 const ShopCard = ({
   shop: {
@@ -13,7 +14,7 @@ const ShopCard = ({
     coverImages,
     reviews = 4.6,
     rating,
-    distance = 10,
+    destination,
   },
   userLoading,
   user,
@@ -22,9 +23,6 @@ const ShopCard = ({
   const [isShopBookmarked, setIsShopBookmarked] = useState(
     user?.bookmarks?.includes(_id)
   );
-
-  const [distancediff, setDistanceDiff] = useState("");
-  const [duration, setDuration] = useState("");
 
   const handleLike = async (shop_id) => {
     setBookMarkLoading(true);
@@ -52,27 +50,8 @@ const ShopCard = ({
       console.log(user);
     }
   };
-  /** @type React.MutableRefObject<HTMLInputElement> */
-  const originRef = useRef();
-  /** @type React.MutableRefObject<HTMLInputElement> */
-  const destinationRef = useRef();
 
-  async function calculateRoute() {
-    if (originRef.current.value === "" || destinationRef.current.value === "") {
-      return;
-    }
-    // eslint-disable-next-line no-undef
-    const directionsService = new google.maps.DirectionsService();
-    const results = await directionsService.route({
-      origin: originRef.current.value,
-      destination: destinationRef.current.value,
-      // eslint-disable-next-line no-undef
-      travelMode: google.maps.TravelMode.DRIVING,
-    });
-    setDirectionsResponse(results);
-    setDistanceDiff(results.routes[0].legs[0].distancediff.text);
-    setDuration(results.routes[0].legs[0].duration.text);
-  }
+  // console.log("destination", destination);
 
   return (
     <div className="relative flex flex-col gap-y-2">
@@ -112,8 +91,8 @@ const ShopCard = ({
             {reviews} reviews
           </span>
         </div>
-        <span className="text-sm font-semibold tabular-nums" ref={destinationRef}>
-          {distance} miles
+        <span className="text-sm font-semibold tabular-nums">
+          <Distance destination={destination} />
         </span>
       </div>
     </div>
