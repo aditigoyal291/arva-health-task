@@ -1,16 +1,12 @@
 import Blob from "@/components/blob";
 import HeroText from "@/components/hero-text";
 import LocationPrompt from "@/components/location";
-import Location from "@/components/location";
-import Navbar from "@/components/navbar";
 import ShopCard from "@/components/shop-card";
 import ShopCardSkeleton from "@/components/skeleton/shop-card-skeleton";
 import { UserContext } from "@/context/auth-context";
-import { coffeeShop } from "@/data/data";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "sonner";
 
 const Home = () => {
