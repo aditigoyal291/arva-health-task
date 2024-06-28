@@ -12,20 +12,19 @@ const CartPage = () => {
           <p className="text-gray-500">cartoon</p>
         </div>
       </div>
-
-      {cart.food === 0 ? (
-        <p>No food items added</p>
-      ) : (
-        cart.map((fooditem) => (
-          <FoodCard
-            key={fooditem._id}
-            fooditem={fooditem.food}
-            shop={{ shopname: "Test Shop", location: "Test Location" }}
-          />
-        ))
-      )}
-      {JSON.stringify(cart, null, 1)}
-
+      <section className="mx-auto md:mx-2 grid max-w-screen-xl grid-cols-1 gap-5 md:grid-cols-2 ">
+        {cart.food === 0 ? (
+          <p>No food items added</p>
+        ) : (
+          cart.map((fooditem) => (
+            <FoodCard
+              key={fooditem._id}
+              fooditem={fooditem.food}
+              shop={{ shopname: "Test Shop", location: "Test Location" }}
+            />
+          ))
+        )}
+      </section>
       <p>Total: ${getCartTotal().toFixed(2)}</p>
     </div>
   );

@@ -14,6 +14,7 @@ const ExploreShopPage = () => {
     const fetchShop = async () => {
       try {
         setLoading(true);
+        setLoading(true);
         const response = await axios.get(
           `http://localhost:8000/api/v1/shop/${shopid}`
         );
@@ -53,7 +54,7 @@ const ExploreShopPage = () => {
               <FoodCard
                 key={fooditem._id}
                 fooditem={fooditem}
-                shop = {{shopname: shop.shopname, location: shop.location}}
+                shop={{ shopname: shop.shopname, location: shop.location }}
               />
             ))}
       </section>

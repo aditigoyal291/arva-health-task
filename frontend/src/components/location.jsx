@@ -36,12 +36,7 @@ const LocationPrompt = ({ isOpen, onClose }) => {
                 Allow Location Access
                 
               </button>
-              <button
-                onClick={onClose}
-                className="rounded bg-teal-700 px-4 py-2 font-bold text-white hover:bg-teal-800"
-              >
-                Type Manually
-              </button>
+              
             </div>
           </div>
         </div>
