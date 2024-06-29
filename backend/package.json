@@ -5,8 +5,9 @@
   "description": "Backend for the MERN stack application",
   "main": "src/index.js",
   "scripts": {
-    "server": "node src/index.js",
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+    "start":"node src/app.js",
+    "server": "node src/app.js",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/app.js",
     "format": "prettier --write .",
     "seed": "node src/scripts/seed.js"
   },
