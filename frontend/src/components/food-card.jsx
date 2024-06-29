@@ -11,7 +11,11 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const FoodCard = ({isAuthenticated=false, fooditem, shop: { shopname } }) => {
+const FoodCard = ({
+  isAuthenticated = false,
+  fooditem,
+  shop: { shopname } = { shopname: "Test Shop" },
+}) => {
   const { cart, addToCart, removeFromCart } = useCart();
   const cartItem = cart.find((item) => item.food._id === fooditem._id);
   const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 0);
@@ -35,7 +39,7 @@ const FoodCard = ({isAuthenticated=false, fooditem, shop: { shopname } }) => {
   };
 
   return (
-    <div className="relative flex gap-x-4 w-full rounded-lg bg-white p-2">
+    <div className="relative flex w-full gap-x-4 rounded-lg bg-white p-2">
       <div className="h-40 w-40 shrink-0 overflow-hidden rounded-lg">
         <img
           src={fooditem.photo}
@@ -105,13 +109,13 @@ const FoodCard = ({isAuthenticated=false, fooditem, shop: { shopname } }) => {
           <span className="text-xl font-bold tracking-tight">
             ${fooditem.itemPrice}
           </span>
-          {isAuthenticated &&
-          <AddtoCartButton
-            handleDec={handleDec}
-            handleInc={handleInc}
-            quantity={quantity}
-          />
-          }
+          {isAuthenticated && (
+            <AddtoCartButton
+              handleDec={handleDec}
+              handleInc={handleInc}
+              quantity={quantity}
+            />
+          )}
         </div>
       </div>
     </div>

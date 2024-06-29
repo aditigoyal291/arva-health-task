@@ -3,7 +3,7 @@
     "_id": "667aac0b8cabd74e7077c14a",
     "shopname": "Brewed Awakenings",
     "email": "contact@brewedawakenings.com",
-    "thumbnail": "https://picsum.photos/200/300?random=1",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 40.7128,
       "longitude": -74.006
@@ -20,7 +20,7 @@
     "_id": "667aac0b8cabd74e7077c14b",
     "shopname": "Espresso Express",
     "email": "info@espressoexpress.com",
-    "thumbnail": "https://picsum.photos/200/300?random=4",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 34.0522,
       "longitude": -118.2437
@@ -41,7 +41,7 @@
     "_id": "667aac0b8cabd74e7077c14c",
     "shopname": "Latte Lounge",
     "email": "hello@lattelounge.com",
-    "thumbnail": "https://picsum.photos/200/300?random=7",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 51.5074,
       "longitude": -0.1278
@@ -58,7 +58,7 @@
     "_id": "667aac0b8cabd74e7077c14d",
     "shopname": "Mocha Moments",
     "email": "support@mochamoments.com",
-    "thumbnail": "https://picsum.photos/200/300?random=10",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 37.7749,
       "longitude": -122.4194
@@ -75,7 +75,7 @@
     "_id": "667aac0b8cabd74e7077c13d",
     "shopname": "Cappuccino Corner",
     "email": "contact@cappuccinocorner.com",
-    "thumbnail": "https://picsum.photos/200/300?random=13",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 48.8566,
       "longitude": 2.3522
@@ -92,7 +92,7 @@
     "_id": "667aac0b8cabd74e7077c12d",
     "shopname": "Brew Brothers",
     "email": "info@brewbrothers.com",
-    "thumbnail": "https://picsum.photos/200/300?random=16",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 35.6895,
       "longitude": 139.6917
@@ -109,7 +109,7 @@
     "_id": "667aac0b8cabd74e7077c11d",
     "shopname": "Java Junction",
     "email": "support@javajunction.com",
-    "thumbnail": "https://picsum.photos/200/300?random=19",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 55.7558,
       "longitude": 37.6173
@@ -126,7 +126,7 @@
     "_id": "667aac0b8cabd74e7077c10d",
     "shopname": "Frothy Fix",
     "email": "hello@frothyfix.com",
-    "thumbnail": "https://picsum.photos/200/300?random=22",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 40.7128,
       "longitude": -74.006
@@ -143,7 +143,7 @@
     "_id": "667aac0b8cabd74e7077c00d",
     "shopname": "Bean Scene",
     "email": "contact@beanscene.com",
-    "thumbnail": "https://picsum.photos/200/300?random=25",
+    "thumbnail": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 34.0522,
       "longitude": -118.2437
@@ -160,7 +160,7 @@
     "_id": "667aac0b8cabd74e7077c90d",
     "shopname": "Grind House",
     "email": "info@grindhouse.com",
-    "thumbnail": "https://picsum.photos/200/300?random=28",
+    "thumbnail": "https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "location": {
       "latitude": 51.5074,
       "longitude": -0.1278
