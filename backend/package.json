@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Backend for the MERN stack application",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
     "start":"node src/app.js",
     "server": "node src/app.js",
