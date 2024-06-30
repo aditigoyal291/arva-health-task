@@ -5,11 +5,12 @@
   "description": "Backend for the MERN stack application",
   "main": "src/app.js",
   "scripts": {
-    "start":"node src/app.js",
+    "start": "node src/app.js",
     "server": "node src/app.js",
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/app.js",
     "format": "prettier --write .",
-    "seed": "node src/scripts/seed.js"
+    "seed": "node src/scripts/seed.js",
+    "vercel-build": "echo hello from vercel-build"  
   },
   "author": "Aditi Goyal",
   "license": "ISC",
