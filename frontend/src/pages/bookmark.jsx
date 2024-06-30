@@ -32,7 +32,7 @@ const BookmarkPage = () => {
   }, [user?._id]); // Add user._id to the dependency array to trigger the effect when it changes
 
   return (
-    <div>
+    <div className="">
       <section className="container mx-auto my-16">
         <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Bookmarked Shops
