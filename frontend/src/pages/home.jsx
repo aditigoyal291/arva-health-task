@@ -36,7 +36,6 @@ const Home = () => {
     setLocation(userLocation);
   };
 
-  
   const showError = (error) => {
     switch (error.code) {
       case error.PERMISSION_DENIED:
@@ -104,13 +103,10 @@ const Home = () => {
             />
           )}
         </div>
-        <div
-         
-        >
+        <div>
           <section className="min-h-screen">
-            
             <HeroText />
-            <p>{currLocation.city}</p>
+            {/* <p>{currLocation.city}</p> */}
             {/* <Blob /> */}
 
             <section className="mx-auto grid max-w-screen-xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">

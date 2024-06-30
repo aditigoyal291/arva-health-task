@@ -60,7 +60,7 @@ const App = () => {
     } else {
       const script = document.createElement("script");
       script.src =
-        " https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places";
+        " https://maps.googleapis.com/maps/api/js?key=AIzaSyCSKWQxL9Ohla8ksCNm5Kba4IC03Si14CY&libraries=places";
       script.onload = () => {
         getCurrentLocation();
       };
@@ -69,7 +69,7 @@ const App = () => {
   }, []);
 
   return (
-    <LoadScript googleMapsApiKey="YOURAPI">
+    <LoadScript googleMapsApiKey="AIzaSyCSKWQxL9Ohla8ksCNm5Kba4IC03Si14CY">
       <div>
         {loading ? (
           <p>Calculating...</p>
