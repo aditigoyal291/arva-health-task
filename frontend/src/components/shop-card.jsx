@@ -14,7 +14,7 @@ const ShopCard = ({
     coverImages,
     reviews = 4.6,
     rating,
-    destination,
+    destination = 10,
   },
   userLoading,
   user,
@@ -34,6 +34,7 @@ const ShopCard = ({
           user_id: user._id,
         }
       );
+      console.log(res.data);
 
       setIsShopBookmarked((prev) => !prev);
 
@@ -50,8 +51,6 @@ const ShopCard = ({
       console.log(user);
     }
   };
-
-  // console.log("destination", destination);
 
   return (
     <div className="relative flex flex-col gap-y-2">
@@ -92,7 +91,9 @@ const ShopCard = ({
           </span>
         </div>
         <span className="text-sm font-semibold tabular-nums">
-          <Distance destination={destination} />
+          <span className="text-sm font-semibold tabular-nums">
+            <Distance destination={destination} />
+          </span>
         </span>
       </div>
     </div>

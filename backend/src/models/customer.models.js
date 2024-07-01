@@ -34,10 +34,10 @@ const customerSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Fooditem",
     }],
-    bookmarks: [{
+    bookmarks: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Shop",
-    }],
+    },
     orders: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Order",

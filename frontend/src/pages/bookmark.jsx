@@ -29,23 +29,26 @@ const BookmarkPage = () => {
     };
 
     getBookmarkedShops();
-  }, [user?._id]); // Add user._id to the dependency array to trigger the effect when it changes
+  }, [user?._id]);
+
 
   return (
-    <div className="">
+    <div >
       <section className="container mx-auto my-16">
         <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Bookmarked Shops
         </h1>
 
         {!loading && bookmarkedShops.length === 0 && (
-          <p className="my-6 mx-auto max-w-screen-xl">Add bookmarks to cafe to see it here</p>
+          <p className="mx-auto my-6 max-w-screen-xl">
+            Add bookmarks to cafe to see it here
+          </p>
         )}
 
         {}
 
         <section className="mx-auto my-6 grid max-w-screen-xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {loading
+          {loading 
             ? Array(20)
                 .fill(0)
                 .map((_, i) => <ShopCardSkeleton key={i} />)
